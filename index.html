@@ -43,20 +43,9 @@
       max-width: 500px;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-
-    h2 {
-      font-size: 40px;
-      margin: 5px 0;
-    }
-
-    h3 {
-      color: var(--primary);
-      margin-bottom: 15px;
-    }
+    h1 { font-size: 24px; margin: 0; }
+    h2 { font-size: 40px; margin: 5px 0; }
+    h3 { color: var(--primary); }
 
     p {
       color: var(--text-secondary);
@@ -84,7 +73,6 @@
     .secondary {
       background: transparent;
       border: 1px solid var(--border);
-      color: var(--text-main);
     }
 
     .section {
@@ -99,51 +87,106 @@
       border-radius: 15px;
       margin-top: 20px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skills span {
+      background: #e0f2fe;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .project {
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO SECTION -->
-  <div class="hero">
-    <div class="hero-left">
-      <img src="profile.jpg" />
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <img src="profile.jpg" />
+  </div>
+
+  <div class="hero-right">
+    <h1>Hey 👋</h1>
+    <h2>I’m Sanju</h2>
+    <h3>Senior Fullstack Developer</h3>
+
+    <p>
+      10+ years of experience building scalable web applications using Angular,
+      Node.js, and modern frontend technologies.
+    </p>
+
+    <div class="buttons">
+      <button class="primary">Hire Me</button>
+      <button class="secondary">Download CV</button>
     </div>
+  </div>
+</div>
 
-    <div class="hero-right">
-      <h1>Hey 👋</h1>
-      <h2>I’m Sanju</h2>
-      <h3>Senior Fullstack Developer</h3>
+<!-- CONTENT -->
+<div class="section">
 
-      <p>
-        I am a Senior Fullstack Developer with over 10 years of experience building scalable
-        web applications using Angular, Node.js, and modern frontend technologies.
-      </p>
-
-      <div class="buttons">
-        <button class="primary">Hire Me</button>
-        <button class="secondary">Download CV</button>
-      </div>
+  <div class="card">
+    <h3>🛠 Skills</h3>
+    <div class="skills">
+      <span>Angular</span>
+      <span>TypeScript</span>
+      <span>Node.js</span>
+      <span>Vue</span>
+      <span>Firebase</span>
+      <span>REST APIs</span>
     </div>
   </div>
 
-  <!-- ABOUT -->
-  <div class="section">
-    <div class="card">
-      <h3>About Me</h3>
-      <p>
-        I specialize in building enterprise applications and modern frontend systems.
-        Currently exploring AI-powered applications and intelligent UI systems.
-      </p>
+  <div class="card">
+    <h3>📅 Experience</h3>
+    <p><b>2022 - Present:</b> Senior Fullstack Developer</p>
+    <p><b>2019 - 2022:</b> Angular Developer</p>
+    <p><b>2016 - 2019:</b> Junior Developer</p>
+  </div>
+
+  <div class="card">
+    <h3>💼 Projects</h3>
+
+    <div class="project">
+      <h4>AI Resume App</h4>
+      <p>Interactive AI-powered resume system.</p>
+      <button onclick="alert('Coming soon')">View</button>
     </div>
 
-    <div class="card">
-      <h3>Projects</h3>
-      <p><b>AI Resume App</b> – Interactive AI-based resume system.</p>
-      <p><b>Dashboard App</b> – Analytics and reporting platform.</p>
+    <div class="project">
+      <h4>Dashboard System</h4>
+      <p>Analytics and reporting platform.</p>
+      <button onclick="alert('Coming soon')">View</button>
     </div>
+
   </div>
+
+  <div class="card">
+    <h3>📬 Contact</h3>
+    <p>Email: sanju.dev@example.com</p>
+    <button onclick="alert('Contact coming soon')">Connect</button>
+  </div>
+
+</div>
 
 </body>
 </html>
