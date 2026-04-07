@@ -8,93 +8,81 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f172a, #020617);
+      background: #0f172a;
       color: #e2e8f0;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
-      padding: 20px;
-    }
-
-    .header {
-      text-align: center;
       padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
     }
 
-    .header h1 {
-      font-size: 42px;
+    .left {
+      flex: 1;
+      text-align: center;
+    }
+
+    .left img {
+      width: 250px;
+      border-radius: 20px;
+    }
+
+    .right {
+      flex: 2;
+    }
+
+    h1 {
+      font-size: 40px;
       margin-bottom: 10px;
     }
 
-    .header h2 {
+    h2 {
       color: #38bdf8;
-      font-weight: normal;
+      margin-top: 0;
     }
 
-    .header p {
-      margin-top: 15px;
-      font-size: 16px;
+    p {
       color: #94a3b8;
+      line-height: 1.6;
     }
 
-    .card {
-      background: rgba(30, 41, 59, 0.8);
-      padding: 20px;
-      border-radius: 14px;
-      margin: 20px 0;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    h3 {
-      color: #38bdf8;
-      margin-bottom: 10px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 6px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #38bdf8;
-      color: #020617;
-      padding: 5px 10px;
-      border-radius: 8px;
-      margin: 5px;
-      font-size: 12px;
-      font-weight: bold;
+    .buttons {
+      margin-top: 20px;
     }
 
     button {
       background: #38bdf8;
-      color: #020617;
+      color: black;
       border: none;
-      padding: 10px 15px;
+      padding: 10px 20px;
       border-radius: 8px;
+      margin-right: 10px;
       cursor: pointer;
       font-weight: bold;
     }
 
-    button:hover {
-      background: #0ea5e9;
+    button.secondary {
+      background: transparent;
+      color: #38bdf8;
+      border: 1px solid #38bdf8;
     }
 
-    .footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 12px;
-      color: #64748b;
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -102,58 +90,39 @@
 <body>
 
 <div class="container">
+  <div class="left">
+    <img src="https://via.placeholder.com/250" />
+  </div>
 
-  <div class="header">
-    <h1>Sanju 🚀</h1>
+  <div class="right">
+    <h1>Hey 👋 I'm Sanju</h1>
     <h2>Senior Fullstack Developer</h2>
-    <p>10+ years building scalable web applications with Angular, Node.js, and modern frontend technologies.</p>
-    <p>Now exploring AI-powered applications and intelligent UI systems.</p>
-  </div>
+    <p>
+      I build scalable web applications with Angular, Node.js, and modern frontend technologies.
+      With 10+ years of experience, I focus on performance, architecture, and clean UI.
+    </p>
 
-  <div class="card">
-    <h3>⚡ Key Highlights</h3>
-    <ul>
-      <li>10+ years of professional development experience</li>
-      <li>Expert in Angular, TypeScript, and frontend architecture</li>
-      <li>Built scalable enterprise-grade applications</li>
-      <li>Currently integrating AI into production-ready systems</li>
-    </ul>
+    <div class="buttons">
+      <button onclick="alert('Contact coming soon')">Hire Me</button>
+      <button class="secondary">Download CV</button>
+    </div>
   </div>
+</div>
 
+<div class="section">
   <div class="card">
-    <h3>🛠 Skills</h3>
-    <span class="badge">Angular</span>
-    <span class="badge">TypeScript</span>
-    <span class="badge">Node.js</span>
-    <span class="badge">Vue</span>
-    <span class="badge">Firebase</span>
+    <h3>🚀 About Me</h3>
+    <p>
+      I specialize in building enterprise applications and modern frontend systems.
+      Currently exploring AI integrations in real-world applications.
+    </p>
   </div>
 
   <div class="card">
     <h3>💼 Projects</h3>
-    <p><b>AI Resume App</b> – Interactive resume with AI chatbot integration.</p>
-    <p><b>E-commerce Dashboard</b> – Admin analytics dashboard with real-time insights.</p>
+    <p><b>AI Resume App</b> – Interactive AI-based resume system.</p>
+    <p><b>Dashboard App</b> – Analytics and reporting platform.</p>
   </div>
-
-  <div class="card">
-    <h3>📅 Experience Timeline</h3>
-    <p>2016 – Started as Junior Developer</p>
-    <p>2019 – Frontend Developer (Angular Specialist)</p>
-    <p>2022 – Senior Fullstack Developer</p>
-    <p>2026 – Building AI-powered applications</p>
-  </div>
-
-  <div class="card">
-    <h3>🤖 AI Assistant</h3>
-    <button onclick="alert('AI assistant coming soon. Stay tuned 😎')">
-      Ask about my experience
-    </button>
-  </div>
-
-  <div class="footer">
-    © 2026 Sanju • Built with passion (and some debugging frustration)
-  </div>
-
 </div>
 
 </body>
