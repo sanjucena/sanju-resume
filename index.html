@@ -24,6 +24,7 @@
       color: var(--text-main);
     }
 
+    /* NAVBAR */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -39,8 +40,14 @@
       margin-left: 15px;
       text-decoration: none;
       color: var(--text-main);
+      font-weight: 500;
     }
 
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* HERO */
     .hero {
       display: flex;
       align-items: center;
@@ -55,12 +62,44 @@
       height: 300px;
       object-fit: cover;
       border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
     .hero-right { max-width: 500px; }
 
-    h2 { font-size: 36px; }
+    h1 { margin: 0; font-size: 22px; }
+    h2 { font-size: 36px; margin: 5px 0; }
+    h3 { color: var(--primary); }
 
+    p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      margin-right: 10px;
+      font-weight: 600;
+    }
+
+    .primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+    }
+
+    /* SECTIONS */
     .section {
       max-width: 900px;
       margin: auto;
@@ -72,6 +111,12 @@
       padding: 20px;
       border-radius: 15px;
       margin-top: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     .skills span {
@@ -82,6 +127,12 @@
       display: inline-block;
     }
 
+    .project {
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
   </style>
 </head>
 
@@ -94,6 +145,7 @@
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
 </div>
@@ -105,37 +157,87 @@
   </div>
 
   <div class="hero-right">
-    <h2>Senior Software Engineer</h2>
-    <p>9.9+ years in Fullstack, DevOps & Enterprise Applications</p>
+    <h1>Hey 👋</h1>
+    <h2>I’m Sanju</h2>
+    <h3>Senior Software Engineer</h3>
+
+    <p>
+      9.9+ years of experience in Fullstack Development, DevOps, and secure enterprise applications.
+      Specialized in Angular, Vue.js, Java, and CI/CD pipelines.
+    </p>
+
+    <div class="buttons">
+      <a href="#contact">
+        <button class="primary">Hire Me</button>
+      </a>
+
+      <a href="resume.pdf" download>
+        <button class="secondary">Download Resume</button>
+      </a>
+    </div>
   </div>
 </div>
 
+<!-- CONTENT -->
 <div class="section">
 
   <div class="card" id="about">
     <h3>About</h3>
-    <p>Experienced engineer in banking and healthcare systems with strong DevSecOps expertise.</p>
+    <p>
+      Senior Software Engineer with experience in banking and healthcare domains.
+      Strong in DevSecOps, automation, and enterprise-grade system development.
+    </p>
   </div>
 
   <div class="card" id="skills">
     <h3>Skills</h3>
     <div class="skills">
       <span>Angular</span>
-      <span>Vue</span>
+      <span>Vue.js</span>
       <span>Java</span>
+      <span>TypeScript</span>
       <span>SQL</span>
       <span>GitHub Actions</span>
+      <span>Jenkins</span>
+      <span>OpenShift</span>
+      <span>Snyk</span>
+      <span>SonarQube</span>
     </div>
   </div>
 
   <div class="card" id="experience">
     <h3>Experience</h3>
-    <p>Cognizant - Senior Software Engineer (2016–Present)</p>
+    <p><b>Cognizant Technology Solutions</b></p>
+    <p>Senior Software Engineer (2016 – Present)</p>
+  </div>
+
+  <div class="card" id="projects">
+    <h3>Projects</h3>
+
+    <div class="project">
+      <h4>AI Resume App</h4>
+      <p>Interactive AI-powered resume platform.</p>
+    </div>
+
+    <div class="project">
+      <h4>Banking Risk Applications</h4>
+      <p>Secure enterprise apps with CI/CD and DevSecOps integration.</p>
+    </div>
+
   </div>
 
   <div class="card" id="contact">
     <h3>Contact</h3>
-    <p>sanjucena09@gmail.com</p>
+    <p>Email: sanjucena09@gmail.com</p>
+    <p>Phone: +91 9715788484</p>
+
+    <p>
+      <a href="https://github.com/sanjucena" target="_blank">GitHub</a>
+    </p>
+
+    <p>
+      <a href="#">LinkedIn</a>
+    </p>
   </div>
 
 </div>
