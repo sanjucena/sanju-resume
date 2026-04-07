@@ -5,49 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #e0f2fe, #fef9c3);
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-secondary: #64748b;
+      --primary: #3b82f6;
+      --accent: #22c55e;
+      --border: #e2e8f0;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
+      background: var(--bg-gradient);
+      color: var(--text-main);
     }
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
+    .hero {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      gap: 40px;
+      justify-content: center;
+      gap: 50px;
+      padding: 60px 20px;
+      flex-wrap: wrap;
     }
 
-    .left {
-      flex: 1;
-      text-align: center;
-    }
-
-    .left img {
-      width: 250px;
+    .hero-left img {
+      width: 260px;
+      height: 300px;
+      object-fit: cover;
       border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
-    .right {
-      flex: 2;
+    .hero-right {
+      max-width: 500px;
     }
 
     h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: 24px;
     }
 
     h2 {
-      color: #38bdf8;
-      margin-top: 0;
+      font-size: 40px;
+      margin: 5px 0;
+    }
+
+    h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
     }
 
     p {
-      color: #94a3b8;
+      color: var(--text-secondary);
       line-height: 1.6;
     }
 
@@ -56,74 +68,82 @@
     }
 
     button {
-      background: #38bdf8;
-      color: black;
-      border: none;
       padding: 10px 20px;
-      border-radius: 8px;
-      margin-right: 10px;
+      border-radius: 10px;
+      border: none;
       cursor: pointer;
-      font-weight: bold;
+      margin-right: 10px;
+      font-weight: 600;
     }
 
-    button.secondary {
+    .primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .secondary {
       background: transparent;
-      color: #38bdf8;
-      border: 1px solid #38bdf8;
+      border: 1px solid var(--border);
+      color: var(--text-main);
     }
 
     .section {
-      max-width: 1100px;
+      max-width: 900px;
       margin: auto;
       padding: 20px;
     }
 
     .card {
-      background: #1e293b;
+      background: var(--card-bg);
       padding: 20px;
-      border-radius: 12px;
+      border-radius: 15px;
       margin-top: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     }
   </style>
 </head>
 
 <body>
 
-<div class="container">
-  <div class="left">
-    <img src="https://via.placeholder.com/250" />
-  </div>
+  <!-- HERO SECTION -->
+  <div class="hero">
+    <div class="hero-left">
+      <img src="profile.jpg" />
+    </div>
 
-  <div class="right">
-    <h1>Hey 👋 I'm Sanju</h1>
-    <h2>Senior Fullstack Developer</h2>
-    <p>
-      I build scalable web applications with Angular, Node.js, and modern frontend technologies.
-      With 10+ years of experience, I focus on performance, architecture, and clean UI.
-    </p>
+    <div class="hero-right">
+      <h1>Hey 👋</h1>
+      <h2>I’m Sanju</h2>
+      <h3>Senior Fullstack Developer</h3>
 
-    <div class="buttons">
-      <button onclick="alert('Contact coming soon')">Hire Me</button>
-      <button class="secondary">Download CV</button>
+      <p>
+        I am a Senior Fullstack Developer with over 10 years of experience building scalable
+        web applications using Angular, Node.js, and modern frontend technologies.
+      </p>
+
+      <div class="buttons">
+        <button class="primary">Hire Me</button>
+        <button class="secondary">Download CV</button>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="section">
-  <div class="card">
-    <h3>🚀 About Me</h3>
-    <p>
-      I specialize in building enterprise applications and modern frontend systems.
-      Currently exploring AI integrations in real-world applications.
-    </p>
-  </div>
+  <!-- ABOUT -->
+  <div class="section">
+    <div class="card">
+      <h3>About Me</h3>
+      <p>
+        I specialize in building enterprise applications and modern frontend systems.
+        Currently exploring AI-powered applications and intelligent UI systems.
+      </p>
+    </div>
 
-  <div class="card">
-    <h3>💼 Projects</h3>
-    <p><b>AI Resume App</b> – Interactive AI-based resume system.</p>
-    <p><b>Dashboard App</b> – Analytics and reporting platform.</p>
+    <div class="card">
+      <h3>Projects</h3>
+      <p><b>AI Resume App</b> – Interactive AI-based resume system.</p>
+      <p><b>Dashboard App</b> – Analytics and reporting platform.</p>
+    </div>
   </div>
-</div>
 
 </body>
 </html>
