@@ -1,192 +1,92 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Sanju | Fullstack Developer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <style>
-    :root {
-      --bg-gradient: linear-gradient(135deg, #e0f2fe, #fef9c3);
-      --card-bg: #ffffff;
-      --text-main: #1e293b;
-      --text-secondary: #64748b;
-      --primary: #3b82f6;
-      --accent: #22c55e;
-      --border: #e2e8f0;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--bg-gradient);
-      color: var(--text-main);
-    }
-
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 50px;
-      padding: 60px 20px;
-      flex-wrap: wrap;
-    }
-
-    .hero-left img {
-      width: 260px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-
-    .hero-right {
-      max-width: 500px;
-    }
-
-    h1 { font-size: 24px; margin: 0; }
-    h2 { font-size: 40px; margin: 5px 0; }
-    h3 { color: var(--primary); }
-
-    p {
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .buttons {
-      margin-top: 20px;
-    }
-
-    button {
-      padding: 10px 20px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      margin-right: 10px;
-      font-weight: 600;
-    }
-
-    .primary {
-      background: var(--accent);
-      color: white;
-    }
-
-    .secondary {
-      background: transparent;
-      border: 1px solid var(--border);
-    }
-
-    .section {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    .card {
-      background: var(--card-bg);
-      padding: 20px;
-      border-radius: 15px;
-      margin-top: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skills span {
-      background: #e0f2fe;
-      padding: 8px 12px;
-      border-radius: 8px;
-      font-size: 14px;
-    }
-
-    .project {
-      margin-top: 15px;
-      padding: 10px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
-  </style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-left">
-    <img src="profile.jpg" />
-  </div>
-
-  <div class="hero-right">
-    <h1>Hey 👋</h1>
-    <h2>I’m Sanju</h2>
-    <h3>Senior Fullstack Developer</h3>
-
-    <p>
-      10+ years of experience building scalable web applications using Angular,
-      Node.js, and modern frontend technologies.
-    </p>
-
-    <div class="buttons">
-      <button class="primary">Hire Me</button>
-      <button class="secondary">Download CV</button>
-    </div>
-  </div>
-</div>
-
-<!-- CONTENT -->
 <div class="section">
 
+  <!-- PROFILE SUMMARY -->
   <div class="card">
-    <h3>🛠 Skills</h3>
+    <h3>👨‍💻 Profile Summary</h3>
+    <p>
+      Senior Software Engineer with 9.9 years of experience in full-stack development,
+      DevOps, and secure enterprise applications across banking and healthcare domains.
+      Skilled in building scalable systems using Angular, Vue.js, Java, and modern CI/CD pipelines.
+    </p>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="card">
+    <h3>🛠 Technical Skills</h3>
     <div class="skills">
       <span>Angular</span>
+      <span>Vue.js</span>
+      <span>Java</span>
       <span>TypeScript</span>
       <span>Node.js</span>
-      <span>Vue</span>
-      <span>Firebase</span>
-      <span>REST APIs</span>
+      <span>SQL</span>
+      <span>MongoDB</span>
+      <span>GitHub Actions</span>
+      <span>Jenkins</span>
+      <span>OpenShift</span>
+      <span>Snyk</span>
+      <span>SonarQube</span>
+      <span>Checkmarx</span>
+      <span>AquaScan</span>
+      <span>Cucumber (BDD)</span>
+      <span>Tableau</span>
     </div>
   </div>
 
+  <!-- EXPERIENCE -->
   <div class="card">
-    <h3>📅 Experience</h3>
-    <p><b>2022 - Present:</b> Senior Fullstack Developer</p>
-    <p><b>2019 - 2022:</b> Angular Developer</p>
-    <p><b>2016 - 2019:</b> Junior Developer</p>
+    <h3>📅 Professional Experience</h3>
+
+    <h4>Cognizant Technology Solutions</h4>
+    <p><b>Senior Software Engineer</b> | Jan 2016 – Present</p>
+
+    <ul>
+      <li>Built enterprise-grade full-stack applications for banking and healthcare clients</li>
+      <li>Migrated CI/CD pipelines from Jenkins to GitHub Actions</li>
+      <li>Integrated security tools like Snyk, SonarQube, AquaScan, and DAST</li>
+      <li>Delivered Tableau dashboards for business insights</li>
+      <li>Acted as go-to person for client communication and delivery ownership</li>
+    </ul>
+
   </div>
 
+  <!-- PROJECTS -->
   <div class="card">
-    <h3>💼 Projects</h3>
+    <h3>💼 Key Projects</h3>
 
     <div class="project">
-      <h4>AI Resume App</h4>
-      <p>Interactive AI-powered resume system.</p>
-      <button onclick="alert('Coming soon')">View</button>
+      <h4>SLASE Engagements (Banking)</h4>
+      <p>Vue.js + Java full-stack development with DevSecOps integration and Tableau reporting.</p>
     </div>
 
     <div class="project">
-      <h4>Dashboard System</h4>
-      <p>Analytics and reporting platform.</p>
-      <button onclick="alert('Coming soon')">View</button>
+      <h4>Wholesale Credit Risk Apps</h4>
+      <p>CI/CD migration to GitHub Actions with integrated security scanning and automation.</p>
+    </div>
+
+    <div class="project">
+      <h4>RBC LEF Platform</h4>
+      <p>Angular-based risk monitoring application with responsive UI and enterprise architecture.</p>
     </div>
 
   </div>
 
+  <!-- ACHIEVEMENTS -->
+  <div class="card">
+    <h3>🏆 Achievements</h3>
+    <ul>
+      <li>Associate of the Month – Aug 2019</li>
+      <li>Recognized for zero-defect delivery</li>
+      <li>Client appreciation for performance and leadership</li>
+    </ul>
+  </div>
+
+  <!-- CONTACT -->
   <div class="card">
     <h3>📬 Contact</h3>
-    <p>Email: sanju.dev@example.com</p>
-    <button onclick="alert('Contact coming soon')">Connect</button>
+    <p>Email: sanjucena09@gmail.com</p>
+    <p>Phone: +91 9715788484</p>
+    <p>Location: Chennai, India</p>
   </div>
 
 </div>
-
-</body>
-</html>
