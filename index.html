@@ -3,34 +3,157 @@
 <head>
   <title>Sanju | Fullstack Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <style>
-    body { font-family: Arial; margin: 20px; background: #f5f5f5; }
-    .card { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
-    h1, h2 { margin: 0; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: #e2e8f0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .header h2 {
+      color: #38bdf8;
+      font-weight: normal;
+    }
+
+    .header p {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #94a3b8;
+    }
+
+    .card {
+      background: rgba(30, 41, 59, 0.8);
+      padding: 20px;
+      border-radius: 14px;
+      margin: 20px 0;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    h3 {
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #38bdf8;
+      color: #020617;
+      padding: 5px 10px;
+      border-radius: 8px;
+      margin: 5px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    button {
+      background: #38bdf8;
+      color: #020617;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #0ea5e9;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 12px;
+      color: #64748b;
+    }
   </style>
 </head>
+
 <body>
 
-<div class="card">
-  <h1>Sanju</h1>
-  <h2>Senior Fullstack Developer</h2>
-  <p>10+ Years Experience in Angular, Node.js, and scalable applications.</p>
-</div>
+<div class="container">
 
-<div class="card">
-  <h3>Skills</h3>
-  <ul>
-    <li>Angular</li>
-    <li>TypeScript</li>
-    <li>Node.js</li>
-    <li>Vue</li>
-  </ul>
-</div>
+  <div class="header">
+    <h1>Sanju 🚀</h1>
+    <h2>Senior Fullstack Developer</h2>
+    <p>10+ years building scalable web applications with Angular, Node.js, and modern frontend technologies.</p>
+    <p>Now exploring AI-powered applications and intelligent UI systems.</p>
+  </div>
 
-<div class="card">
-  <h3>Projects</h3>
-  <p><b>AI Resume App</b> – Interactive AI-based resume system.</p>
-  <p><b>E-commerce Dashboard</b> – Admin analytics dashboard.</p>
+  <div class="card">
+    <h3>⚡ Key Highlights</h3>
+    <ul>
+      <li>10+ years of professional development experience</li>
+      <li>Expert in Angular, TypeScript, and frontend architecture</li>
+      <li>Built scalable enterprise-grade applications</li>
+      <li>Currently integrating AI into production-ready systems</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🛠 Skills</h3>
+    <span class="badge">Angular</span>
+    <span class="badge">TypeScript</span>
+    <span class="badge">Node.js</span>
+    <span class="badge">Vue</span>
+    <span class="badge">Firebase</span>
+  </div>
+
+  <div class="card">
+    <h3>💼 Projects</h3>
+    <p><b>AI Resume App</b> – Interactive resume with AI chatbot integration.</p>
+    <p><b>E-commerce Dashboard</b> – Admin analytics dashboard with real-time insights.</p>
+  </div>
+
+  <div class="card">
+    <h3>📅 Experience Timeline</h3>
+    <p>2016 – Started as Junior Developer</p>
+    <p>2019 – Frontend Developer (Angular Specialist)</p>
+    <p>2022 – Senior Fullstack Developer</p>
+    <p>2026 – Building AI-powered applications</p>
+  </div>
+
+  <div class="card">
+    <h3>🤖 AI Assistant</h3>
+    <button onclick="alert('AI assistant coming soon. Stay tuned 😎')">
+      Ask about my experience
+    </button>
+  </div>
+
+  <div class="footer">
+    © 2026 Sanju • Built with passion (and some debugging frustration)
+  </div>
+
 </div>
 
 </body>
