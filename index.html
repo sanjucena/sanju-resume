@@ -15,10 +15,29 @@
       --border: #e2e8f0;
     }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: var(--bg-gradient);
+      color: var(--text-main);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: white;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .nav-links a {
+      margin-left: 15px;
+      text-decoration: none;
       color: var(--text-main);
     }
 
@@ -36,44 +55,11 @@
       height: 300px;
       object-fit: cover;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
-    .hero-right {
-      max-width: 500px;
-    }
+    .hero-right { max-width: 500px; }
 
-    h1 { margin: 0; font-size: 24px; }
-    h2 { font-size: 40px; margin: 5px 0; }
-    h3 { color: var(--primary); }
-
-    p {
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .buttons {
-      margin-top: 20px;
-    }
-
-    button {
-      padding: 10px 20px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      margin-right: 10px;
-      font-weight: 600;
-    }
-
-    .primary {
-      background: var(--accent);
-      color: white;
-    }
-
-    .secondary {
-      background: transparent;
-      border: 1px solid var(--border);
-    }
+    h2 { font-size: 36px; }
 
     .section {
       max-width: 900px;
@@ -86,72 +72,73 @@
       padding: 20px;
       border-radius: 15px;
       margin-top: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
     }
 
     .skills span {
       background: #e0f2fe;
-      padding: 8px 12px;
+      padding: 6px 10px;
       border-radius: 8px;
+      margin: 5px;
+      display: inline-block;
     }
+
   </style>
 </head>
 
 <body>
 
-<!-- HERO (THIS IS YOUR IMAGE SECTION) -->
+<!-- NAVBAR -->
+<div class="navbar">
+  <h3>Sanju</h3>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
+<!-- HERO -->
 <div class="hero">
   <div class="hero-left">
     <img src="profile.jpg" />
   </div>
 
   <div class="hero-right">
-    <h1>Hey 👋</h1>
-    <h2>I’m Sanju</h2>
-    <h3>Senior Software Engineer</h3>
-
-    <p>
-      9.9+ years of experience in full-stack development, DevOps, and secure enterprise applications.
-    </p>
-
-    <div class="buttons">
-      <button class="primary">Hire Me</button>
-      <button class="secondary">Download Resume</button>
-    </div>
+    <h2>Senior Software Engineer</h2>
+    <p>9.9+ years in Fullstack, DevOps & Enterprise Applications</p>
   </div>
 </div>
 
-<!-- CONTENT -->
 <div class="section">
 
-  <div class="card">
-    <h3>Profile Summary</h3>
-    <p>
-      Senior Software Engineer with experience in banking and healthcare domains,
-      specializing in Angular, Vue.js, Java, and DevSecOps pipelines.
-    </p>
+  <div class="card" id="about">
+    <h3>About</h3>
+    <p>Experienced engineer in banking and healthcare systems with strong DevSecOps expertise.</p>
   </div>
 
-  <div class="card">
+  <div class="card" id="skills">
     <h3>Skills</h3>
     <div class="skills">
       <span>Angular</span>
-      <span>Vue.js</span>
+      <span>Vue</span>
       <span>Java</span>
-      <span>TypeScript</span>
       <span>SQL</span>
       <span>GitHub Actions</span>
-      <span>Jenkins</span>
-      <span>OpenShift</span>
     </div>
   </div>
 
-  <div class="card">
+  <div class="card" id="experience">
     <h3>Experience</h3>
-    <p><b>Cognizant Technology Solutions</b></p>
+    <p>Cognizant - Senior Software Engineer (2016–Present)</p>
+  </div>
+
+  <div class="card" id="contact">
+    <h3>Contact</h3>
+    <p>sanjucena09@gmail.com</p>
+  </div>
+
+</div>
+
+</body>
+</html>
