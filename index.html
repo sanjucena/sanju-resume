@@ -15,18 +15,18 @@ body {
   font-family: Arial;
 }
 
-/* subtle glass card */
+/* cards */
 .card {
-  background: rgba(30, 41, 59, 0.6);
+  background: rgba(30, 41, 59, 0.7);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(148,163,184,0.1);
   transition: 0.3s;
 }
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
-/* fade animation */
+/* animation */
 .fade {
   opacity: 0;
   transform: translateY(30px);
@@ -100,9 +100,9 @@ Building secure, scalable enterprise applications across banking and healthcare 
 </div>
 </section>
 
-<!-- TIMELINE EXPERIENCE -->
+<!-- EXPERIENCE TIMELINE -->
 <section class="py-16 fade">
-<h2 class="text-2xl font-bold text-center mb-10">Experience Timeline</h2>
+<h2 class="text-2xl font-bold text-center mb-10">Experience</h2>
 
 <div class="max-w-3xl mx-auto border-l border-gray-700 pl-6 space-y-10">
 
@@ -110,25 +110,25 @@ Building secure, scalable enterprise applications across banking and healthcare 
 <h3 class="font-bold text-lg">Cognizant Technology Solutions</h3>
 <p class="text-sm text-gray-400">2016 – Present</p>
 <ul class="mt-2 text-gray-500">
-<li>• Built full-stack applications (Vue.js + Java)</li>
-<li>• Implemented CI/CD using GitHub Actions</li>
-<li>• Integrated DevSecOps tools</li>
-<li>• Developed Tableau dashboards</li>
-<li>• Led client communication</li>
-<li>• Mentored developers</li>
+<li>• Full-stack development (Vue.js + Java)</li>
+<li>• CI/CD pipelines with GitHub Actions</li>
+<li>• DevSecOps integration</li>
+<li>• Tableau dashboards</li>
+<li>• Client communication</li>
+<li>• Mentoring team members</li>
 </ul>
 </div>
 
 <div>
-<h3 class="font-bold text-lg">Banking Risk Systems</h3>
+<h3 class="font-bold text-lg">Banking Risk Applications</h3>
 <p class="text-sm text-gray-400">2020 – 2024</p>
 <ul class="mt-2 text-gray-500">
-<li>• Migrated Jenkins pipelines</li>
-<li>• Automated OpenShift deployments</li>
-<li>• Integrated security scans</li>
-<li>• Built analytics dashboards</li>
-<li>• Managed production issues</li>
-<li>• Coordinated teams</li>
+<li>• Jenkins to GitHub migration</li>
+<li>• OpenShift deployments</li>
+<li>• Security scanning tools</li>
+<li>• Analytics dashboards</li>
+<li>• SLA support</li>
+<li>• Cross-team coordination</li>
 </ul>
 </div>
 
@@ -136,12 +136,12 @@ Building secure, scalable enterprise applications across banking and healthcare 
 <h3 class="font-bold text-lg">RBC – LEF</h3>
 <p class="text-sm text-gray-400">2020 – 2023</p>
 <ul class="mt-2 text-gray-500">
-<li>• Angular-based risk system</li>
-<li>• UI component development</li>
-<li>• Performance optimization</li>
-<li>• UAT defect fixes</li>
-<li>• Stakeholder collaboration</li>
-<li>• Stable releases</li>
+<li>• Angular application</li>
+<li>• UI components</li>
+<li>• Performance tuning</li>
+<li>• UAT fixes</li>
+<li>• Stakeholder discussions</li>
+<li>• Production release</li>
 </ul>
 </div>
 
@@ -150,18 +150,22 @@ Building secure, scalable enterprise applications across banking and healthcare 
 
 <!-- PROJECTS -->
 <section id="projects" class="py-16 fade">
-<h2 class="text-2xl font-bold text-center mb-10">Key Projects</h2>
+<h2 class="text-2xl font-bold text-center mb-10">Projects</h2>
 
 <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
 
 <div class="card p-6 rounded">
 <h3 class="font-bold">DevSecOps Pipeline</h3>
-<p class="text-gray-400 mt-2">Secure CI/CD automation with integrated scanning tools.</p>
+<p class="text-gray-400 mt-2">
+Secure CI/CD pipeline with Snyk, SonarQube, and DAST integration.
+</p>
 </div>
 
 <div class="card p-6 rounded">
-<h3 class="font-bold">Banking Risk System</h3>
-<p class="text-gray-400 mt-2">Enterprise-grade risk monitoring and reporting platform.</p>
+<h3 class="font-bold">Banking Risk Monitoring System</h3>
+<p class="text-gray-400 mt-2">
+Enterprise-level system for risk analysis and reporting.
+</p>
 </div>
 
 </div>
@@ -172,7 +176,7 @@ Building secure, scalable enterprise applications across banking and healthcare 
 <h2 class="text-2xl font-bold mb-4">Let’s Work Together</h2>
 
 <p class="text-gray-500 mb-6">
-Open to opportunities in full-stack and DevSecOps roles.
+Open to full-stack and DevSecOps opportunities.
 </p>
 
 <a href="/Sanjay_Prasanna_Resume.pdf" class="bg-indigo-600 px-6 py-3 rounded">
@@ -192,7 +196,21 @@ Download Resume
 </div>
 </section>
 
+<!-- CHATBOT -->
+<div class="fixed bottom-5 right-5">
+<button onclick="toggleChat()" class="bg-indigo-600 px-4 py-3 rounded-full text-white">💬</button>
+
+<div id="chatbox" class="hidden mt-2 w-72 bg-slate-800 p-4 rounded">
+<div id="chatlog" class="text-sm space-y-2 mb-3 h-40 overflow-y-auto"></div>
+
+<input id="userInput" type="text" placeholder="Ask about me..."
+class="w-full p-2 rounded bg-slate-700 text-white"
+onkeydown="handleKey(event)">
+</div>
+</div>
+
 <script>
+// animation
 const items = document.querySelectorAll('.fade');
 window.addEventListener('scroll', ()=>{
 items.forEach(el=>{
@@ -200,7 +218,35 @@ if(el.getBoundingClientRect().top < window.innerHeight-50){
 el.classList.add('show');
 }
 })
-})
+});
+
+// chatbot
+function toggleChat(){
+document.getElementById('chatbox').classList.toggle('hidden');
+}
+
+function handleKey(e){
+if(e.key === 'Enter'){
+let input = e.target.value.toLowerCase();
+let reply = "";
+
+if(input.includes("experience")){
+reply = "I have 10+ years experience in enterprise applications.";
+}
+else if(input.includes("skills")){
+reply = "Java, Angular, Vue.js, DevSecOps, CI/CD.";
+}
+else{
+reply = "Ask about my skills, experience, or projects.";
+}
+
+let log = document.getElementById("chatlog");
+log.innerHTML += "<div>👤 "+input+"</div>";
+log.innerHTML += "<div class='text-indigo-400'>🤖 "+reply+"</div>";
+
+e.target.value="";
+}
+}
 </script>
 
 </body>
