@@ -15,7 +15,6 @@ body {
   font-family: Arial;
 }
 
-/* cards */
 .card {
   background: rgba(30, 41, 59, 0.7);
   backdrop-filter: blur(10px);
@@ -26,7 +25,6 @@ body {
   transform: translateY(-6px);
 }
 
-/* animation */
 .fade {
   opacity: 0;
   transform: translateY(30px);
@@ -37,7 +35,6 @@ body {
   transform: translateY(0);
 }
 
-/* gradient */
 .gradient {
   background: linear-gradient(90deg,#818cf8,#6366f1);
   -webkit-background-clip: text;
@@ -65,7 +62,7 @@ Building secure, scalable enterprise applications across banking and healthcare 
 </p>
 
 <div class="mt-6 space-x-4">
-<a href="/Sanjay_Prasanna_Resume.pdf" class="bg-indigo-600 px-5 py-2 rounded">Resume</a>
+<a href="/resume.pdf" class="bg-indigo-600 px-5 py-2 rounded">Resume</a>
 <a href="#contact" class="border border-indigo-500 px-5 py-2 rounded">Contact</a>
 <a href="#projects" class="border border-gray-500 px-5 py-2 rounded">Projects</a>
 </div>
@@ -94,7 +91,7 @@ Building secure, scalable enterprise applications across banking and healthcare 
 
 <div class="card p-5 rounded">
 <b>Security</b>
-<p>Snyk, SonarQube, Checkmarx, DAST, Aqua</p>
+<p>Snyk, SonarQube, Checkmarx, DAST</p>
 </div>
 
 </div>
@@ -220,29 +217,30 @@ el.classList.add('show');
 })
 });
 
-// chatbot
+// chatbot toggle
 function toggleChat(){
 document.getElementById('chatbox').classList.toggle('hidden');
 }
 
-function handleKey(e){
+// AI chatbot
+async function handleKey(e){
 if(e.key === 'Enter'){
-let input = e.target.value.toLowerCase();
-let reply = "";
 
-if(input.includes("experience")){
-reply = "I have 10+ years experience in enterprise applications.";
-}
-else if(input.includes("skills")){
-reply = "Java, Angular, Vue.js, DevSecOps, CI/CD.";
-}
-else{
-reply = "Ask about my skills, experience, or projects.";
-}
+let input = e.target.value;
+
+let response = await fetch("/api/chat", {
+method: "POST",
+headers: {
+"Content-Type": "application/json"
+},
+body: JSON.stringify({ message: input })
+});
+
+let data = await response.json();
 
 let log = document.getElementById("chatlog");
 log.innerHTML += "<div>👤 "+input+"</div>";
-log.innerHTML += "<div class='text-indigo-400'>🤖 "+reply+"</div>";
+log.innerHTML += "<div class='text-indigo-400'>🤖 "+data.reply+"</div>";
 
 e.target.value="";
 }
