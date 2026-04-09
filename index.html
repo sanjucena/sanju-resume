@@ -11,13 +11,18 @@
 <style>
 body {
   font-family: Arial;
-  background: linear-gradient(135deg,#f8fafc,#e0f2fe);
+  background: linear-gradient(135deg,#eef2ff,#f5f3ff);
 }
 .card {
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 .card:hover {
   transform: translateY(-6px);
+}
+.gradient-text {
+  background: linear-gradient(90deg,#6366f1,#8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 </style>
 </head>
@@ -29,90 +34,116 @@ body {
 <img src="profile.jpg" class="mx-auto w-40 h-40 rounded-full shadow-lg mb-6">
 
 <h1 class="text-4xl font-bold">
-Sanjay Prasanna
+Hi, I'm <span class="gradient-text">Sanjay Prasanna</span>
 </h1>
 
-<p class="text-lg mt-3">
+<p class="text-lg mt-3 font-medium">
 Senior Software Engineer | 10+ Years Experience
 </p>
 
-<p class="max-w-xl mx-auto mt-4">
-Expert in Java, Vue.js, Angular, and DevSecOps pipelines with experience in secure enterprise applications across banking and healthcare domains.
+<p class="max-w-2xl mx-auto mt-4 text-gray-600">
+Expert in Java, Vue.js, Angular, and DevSecOps pipelines. Experienced in secure enterprise applications across banking and healthcare domains, delivering scalable and high-performance systems.
 </p>
 </section>
 
 <!-- SKILLS -->
-<section class="py-12 bg-white">
-<h2 class="text-2xl font-bold text-center mb-8">Skills</h2>
+<section class="py-14 bg-white">
+<h2 class="text-3xl font-bold text-center mb-10">Technical Skills</h2>
 
 <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
 
-<div class="card p-5 shadow rounded">
-<h3 class="font-bold">Frontend</h3>
-<p>Vue.js, Angular, JavaScript, HTML, CSS</p>
+<div class="card p-6 shadow rounded-xl">
+<h3 class="font-bold mb-2">Frontend</h3>
+<p>Vue.js, Angular (7–18), JavaScript, HTML5, CSS3, Bootstrap</p>
 </div>
 
-<div class="card p-5 shadow rounded">
-<h3 class="font-bold">Backend</h3>
+<div class="card p-6 shadow rounded-xl">
+<h3 class="font-bold mb-2">Backend</h3>
 <p>Java, Spring Boot, REST APIs</p>
 </div>
 
-<div class="card p-5 shadow rounded">
-<h3 class="font-bold">DevOps</h3>
-<p>GitHub Actions, Jenkins, OpenShift, Vault</p>
+<div class="card p-6 shadow rounded-xl">
+<h3 class="font-bold mb-2">DevOps</h3>
+<p>GitHub Actions, Jenkins, UCD, OpenShift (OCP), Vault, Nexus</p>
 </div>
 
-<div class="card p-5 shadow rounded">
-<h3 class="font-bold">Security</h3>
-<p>Snyk, SonarQube, Checkmarx, DAST</p>
+<div class="card p-6 shadow rounded-xl">
+<h3 class="font-bold mb-2">Security</h3>
+<p>Snyk, SonarQube, Checkmarx, AquaScan, DAST</p>
 </div>
 
 </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section class="py-12">
-<h2 class="text-2xl font-bold text-center mb-8">Experience</h2>
+<section class="py-14">
+<h2 class="text-3xl font-bold text-center mb-10">Professional Experience</h2>
 
-<div class="max-w-5xl mx-auto space-y-6">
+<div class="max-w-5xl mx-auto space-y-8">
 
-<div class="card p-6 bg-white shadow rounded">
-<h3 class="font-bold">Cognizant Technology Solutions</h3>
+<div class="card p-6 bg-white shadow rounded-xl">
+<h3 class="font-bold text-lg">Cognizant Technology Solutions</h3>
 <p class="text-sm text-gray-500">Senior Software Engineer | 2016 – Present</p>
 
-<ul class="mt-3 list-disc ml-6">
-<li>Built scalable full-stack applications using Vue.js and Java</li>
+<ul class="mt-4 list-disc ml-6 space-y-2">
+<li>Built full-stack applications using Vue.js frontend and Java backend</li>
 <li>Implemented CI/CD pipelines using GitHub Actions</li>
-<li>Integrated DevSecOps tools like Snyk and SonarQube</li>
+<li>Integrated DevSecOps tools like Snyk, SonarQube, Checkmarx</li>
 <li>Developed Tableau dashboards for business insights</li>
 <li>Led client communication and mentored junior developers</li>
-<li>Optimized performance and backend systems</li>
+<li>Optimized backend logic and SQL queries for performance</li>
 </ul>
 </div>
 
-<div class="card p-6 bg-white shadow rounded">
-<h3 class="font-bold">Banking Risk Applications</h3>
+<div class="card p-6 bg-white shadow rounded-xl">
+<h3 class="font-bold text-lg">SLASE Engagements (Banking)</h3>
 
-<ul class="mt-3 list-disc ml-6">
-<li>Migrated pipelines from Jenkins to GitHub Actions</li>
+<ul class="mt-4 list-disc ml-6 space-y-2">
+<li>Developed Vue.js + Java full-stack modules</li>
+<li>Implemented BDD automation using Cucumber</li>
+<li>Integrated security scanning (Snyk, DAST)</li>
+<li>Built Tableau dashboards for KPI tracking</li>
+<li>Acted as technical liaison with stakeholders</li>
+<li>Improved system performance and stability</li>
+</ul>
+</div>
+
+<div class="card p-6 bg-white shadow rounded-xl">
+<h3 class="font-bold text-lg">Wholesale Credit Risk Applications</h3>
+
+<ul class="mt-4 list-disc ml-6 space-y-2">
+<li>Migrated pipelines from Jenkins/Helios to GitHub Actions</li>
+<li>Integrated security tools across pipelines</li>
 <li>Automated deployments using OpenShift</li>
-<li>Integrated security scanning tools</li>
-<li>Delivered analytics dashboards</li>
+<li>Delivered Tableau reports for leadership</li>
 <li>Handled production issues and SLA compliance</li>
-<li>Coordinated across teams and stakeholders</li>
+<li>Coordinated across multiple teams</li>
 </ul>
 </div>
 
-<div class="card p-6 bg-white shadow rounded">
-<h3 class="font-bold">RBC – LEF</h3>
+<div class="card p-6 bg-white shadow rounded-xl">
+<h3 class="font-bold text-lg">RBC – LEF</h3>
 
-<ul class="mt-3 list-disc ml-6">
+<ul class="mt-4 list-disc ml-6 space-y-2">
 <li>Developed Angular-based risk monitoring system</li>
 <li>Built reusable UI components</li>
-<li>Improved application performance</li>
-<li>Handled UAT defects and fixes</li>
-<li>Worked with business stakeholders</li>
-<li>Delivered stable releases</li>
+<li>Implemented responsive UI design</li>
+<li>Resolved UAT defects and issues</li>
+<li>Collaborated with business teams</li>
+<li>Delivered stable production releases</li>
+</ul>
+</div>
+
+<div class="card p-6 bg-white shadow rounded-xl">
+<h3 class="font-bold text-lg">Centene Projects</h3>
+
+<ul class="mt-4 list-disc ml-6 space-y-2">
+<li>Developed healthcare modules improving care efficiency</li>
+<li>Built Angular components with best practices</li>
+<li>Supported QA and UAT cycles</li>
+<li>Worked in Agile teams</li>
+<li>Maintained performance standards</li>
+<li>Supported production deployments</li>
 </ul>
 </div>
 
@@ -120,27 +151,43 @@ Expert in Java, Vue.js, Angular, and DevSecOps pipelines with experience in secu
 </section>
 
 <!-- EDUCATION -->
-<section class="py-12 bg-white">
-<h2 class="text-2xl font-bold text-center mb-6">Education</h2>
+<section class="py-14 bg-white text-center">
+<h2 class="text-3xl font-bold mb-6">Education</h2>
 
-<div class="text-center">
-<p><b>ME – Design Engineering</b>, SKCET Coimbatore (2015)</p>
-<p><b>BE – Automobile Engineering</b>, KLN College (2013)</p>
-<p>12th – Mahatma Montessori (2009)</p>
-<p>10th – Mahatma Montessori (2007)</p>
+<p><b>ME – Design Engineering</b>, Sri Krishna College of Engineering (2015)</p>
+<p><b>BE – Automobile Engineering</b>, KLN College of Engineering (2013)</p>
+<p>12th – Mahatma Montessori MHSS (2009)</p>
+<p>10th – Mahatma Montessori MHSS (2007)</p>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="py-14">
+<h2 class="text-3xl font-bold text-center mb-8">Achievements</h2>
+
+<div class="max-w-4xl mx-auto text-center space-y-3">
+<p>🏆 Associate of the Month (2019)</p>
+<p>⭐ Recognized for zero-defect delivery</p>
+<p>👏 Client appreciation for handling critical production issues</p>
+<p>🚀 Led CI/CD migration initiatives</p>
+<p>🧠 Known as go-to technical expert</p>
 </div>
 </section>
 
 <!-- CONTACT -->
-<section class="py-12 text-center">
-<h2 class="text-2xl font-bold mb-4">Contact</h2>
-<p>sanjucena09@gmail.com</p>
+<section class="py-14 bg-white text-center">
+<h2 class="text-3xl font-bold mb-6">Contact</h2>
 
-<div class="mt-3">
-<a href="#" class="text-blue-600 mr-4">GitHub</a>
-<a href="#" class="text-blue-600">LinkedIn</a>
+<p>Email: sanjucena09@gmail.com</p>
+
+<div class="mt-4">
+<a href="#" class="text-indigo-600 mr-4">GitHub</a>
+<a href="#" class="text-indigo-600">LinkedIn</a>
 </div>
 </section>
+
+<footer class="text-center py-6 text-gray-500">
+© 2026 Sanjay Prasanna
+</footer>
 
 </body>
 </html>
