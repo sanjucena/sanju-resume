@@ -10,184 +10,187 @@
 
 <style>
 body {
-  background: radial-gradient(circle at top, #0a3f3f, #021c1c);
+  background: linear-gradient(135deg,#021c1c,#063232);
   color: #e2e8f0;
   font-family: Arial;
 }
 
+/* container */
+.container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 30px;
+}
+
 /* card */
 .card {
-  background: rgba(15, 23, 42, 0.6);
-  border-radius: 12px;
-  padding: 20px;
+  background: rgba(15,23,42,0.75);
+  padding: 25px;
+  border-radius: 16px;
   transition: 0.4s;
 }
 .card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 0 25px rgba(34,211,238,0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 0 35px rgba(34,211,238,0.3);
 }
 
-/* timeline */
-.timeline {
-  position: relative;
-  margin: 50px 0;
+/* buttons */
+.btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: 0.3s;
 }
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(#22d3ee,#0ea5a4);
-  transform: translateX(-50%);
+.btn-primary {
+  background: #0ea5a4;
 }
-
-/* items */
-.timeline-item {
-  width: 45%;
-  padding: 20px;
-  position: relative;
-}
-
-/* left */
-.timeline-item.left {
-  left: 0;
-  text-align: right;
-}
-
-/* right */
-.timeline-item.right {
-  left: 55%;
-}
-
-/* dots */
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  top: 20px;
-  width: 15px;
-  height: 15px;
+.btn-primary:hover {
   background: #22d3ee;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #22d3ee;
+  transform: scale(1.05);
+}
+.btn-outline {
+  border: 1px solid #22d3ee;
+}
+.btn-outline:hover {
+  background: #22d3ee;
+  color: black;
 }
 
-/* left dot */
-.timeline-item.left::before {
-  right: -30px;
+/* heading */
+.heading {
+  font-size: 30px;
+  font-weight: bold;
+  color: #22d3ee;
+  margin-bottom: 20px;
 }
 
-/* right dot */
-.timeline-item.right::before {
-  left: -30px;
-}
-
-/* animation */
-.fade {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 1s;
-}
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
+/* spacing */
+.section {
+  margin-bottom: 70px;
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="max-w-6xl mx-auto px-6">
+<div class="container">
 
 <!-- HERO -->
-<div class="text-center py-16 fade">
-<img src="profile.jpg" class="mx-auto w-44 h-44 rounded-full border-4 border-teal-400 mb-4">
+<div class="text-center section">
+<img src="profile.jpg" class="mx-auto w-48 h-48 rounded-full border-4 border-teal-400 mb-5">
 
-<h1 class="text-4xl font-bold">Sanjay Prasanna</h1>
-<p class="text-gray-400 mt-2">Senior AI & Full-Stack Engineer • 10+ Years</p>
+<h1 class="text-5xl font-bold">Sanjay Prasanna</h1>
+<p class="text-gray-300 text-lg mt-2">Senior AI & Full-Stack Engineer • 10+ Years</p>
 
-<div class="mt-5">
-<a href="/resume.pdf" target="_blank" class="bg-teal-500 px-5 py-2 rounded mr-2">Resume</a>
-<a href="#contact" class="border border-teal-400 px-5 py-2 rounded">Contact</a>
+<div class="mt-6">
+<a href="/resume_v2.pdf?v=2" target="_blank" class="btn btn-primary mr-3">📄 Resume</a>
+<a href="#contact" class="btn btn-outline">Contact</a>
 </div>
 </div>
 
-<!-- TIMELINE -->
-<h2 class="text-2xl font-bold text-center mb-10 fade">Career Timeline</h2>
-
-<div class="timeline">
-
-<!-- 2024 -->
-<div class="timeline-item left card fade">
-<h3>2024 – Present</h3>
-<p class="text-gray-400">
-SLASE Banking System<br>
-Vue + Java full-stack development<br>
-DevSecOps with AquaScan & Snyk<br>
-GitHub Actions automation
-</p>
+<!-- SUMMARY -->
+<div class="section">
+<div class="heading">Professional Summary</div>
+<div class="card">
+Innovative Senior Software Engineer with 10+ years in banking & healthcare. Expert in AI-enhanced applications, DevSecOps pipelines, and enterprise cloud systems using Java, Angular, and Node.js.
+</div>
 </div>
 
-<!-- 2020 -->
-<div class="timeline-item right card fade">
-<h3>2020 – 2023</h3>
-<p class="text-gray-400">
-RBC Risk Platform<br>
-Angular 14 → 18 Migration<br>
-Node.js + Vault integration<br>
-OpenShift migration
-</p>
+<!-- SKILLS -->
+<div class="section">
+<div class="heading">Technical Skills</div>
+
+<div class="grid md:grid-cols-3 gap-6">
+<div class="card">AI: Chatbots, Copilot, NLP Integration</div>
+<div class="card">Frontend: Angular (7–18), Vue, TypeScript</div>
+<div class="card">Backend: Java, Node.js, Spring Boot</div>
+<div class="card">DevSecOps: AquaScan, Snyk, DAST, Vault</div>
+<div class="card">Cloud: OpenShift, Containers, CI/CD</div>
+<div class="card">Analytics: Tableau, BDD Automation</div>
+</div>
 </div>
 
-<!-- 2017 -->
-<div class="timeline-item left card fade">
-<h3>2017 – 2020</h3>
-<p class="text-gray-400">
-Healthcare Systems<br>
-Angular + Spring Boot<br>
-Secure enterprise pipelines
-</p>
+<!-- PROJECTS -->
+<div class="section">
+<div class="heading">Projects (Detailed)</div>
+
+<div class="grid md:grid-cols-2 gap-6">
+
+<div class="card">
+<h3 class="font-bold text-lg">SLASE Engagements (Banking)</h3>
+<ul class="mt-3 text-gray-300">
+<li>• Vue.js + Java full-stack development</li>
+<li>• GitHub Copilot for optimized logic</li>
+<li>• AquaScan + Snyk integration</li>
+<li>• CI/CD automation using GitHub Actions</li>
+</ul>
 </div>
 
-<!-- 2016 -->
-<div class="timeline-item right card fade">
-<h3>2016 – 2017</h3>
-<p class="text-gray-400">
-UI Development<br>
-HTML, CSS, Bootstrap<br>
-OpenText Exstream
-</p>
+<div class="card">
+<h3 class="font-bold text-lg">Wholesale Credit Risk</h3>
+<ul class="mt-3 text-gray-300">
+<li>• CI/CD migration to GitHub Actions</li>
+<li>• Security: AquaScan, Checkmarx, DAST</li>
+<li>• OpenShift container deployment</li>
+</ul>
 </div>
 
+<div class="card">
+<h3 class="font-bold text-lg">RBC – LEF</h3>
+<ul class="mt-3 text-gray-300">
+<li>• Angular 14 → 18 migration</li>
+<li>• OCP3 → OCP4 infrastructure migration</li>
+<li>• Node.js + Vault middleware</li>
+<li>• Risk monitoring platform</li>
+</ul>
+</div>
+
+<div class="card">
+<h3 class="font-bold text-lg">Centene Healthcare</h3>
+<ul class="mt-3 text-gray-300">
+<li>• Angular + Spring Boot modules</li>
+<li>• Secure healthcare pipelines</li>
+<li>• US federal healthcare systems</li>
+</ul>
+</div>
+
+<div class="card">
+<h3 class="font-bold text-lg">AI Portfolio Lab</h3>
+<ul class="mt-3 text-gray-300">
+<li>• AI chatbot integration</li>
+<li>• Serverless backend architecture</li>
+<li>• Secure API key handling</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<div class="section">
+<div class="heading">Achievements</div>
+<div class="card">
+<ul>
+<li>• Angular 14 → 18 migration (single-handed)</li>
+<li>• OCP3 → OCP4 migration</li>
+<li>• Associate of the Month (2019)</li>
+</ul>
+</div>
 </div>
 
 <!-- CONTACT -->
-<div id="contact" class="text-center py-16 fade">
-<h2 class="text-2xl font-bold mb-4">Contact</h2>
+<div id="contact" class="section text-center">
+<div class="heading">Contact</div>
 
+<div class="card inline-block">
 <p>📧 sanjucena09@gmail.com</p>
 <p>📱 +91 97157 88484</p>
-
 <a href="https://www.linkedin.com/in/sanjay-prasanna-a831b273" target="_blank">
 💼 LinkedIn
 </a>
 </div>
-
 </div>
 
-<script>
-// animation
-const items = document.querySelectorAll('.fade');
-window.addEventListener('scroll', ()=>{
-items.forEach(el=>{
-if(el.getBoundingClientRect().top < window.innerHeight-50){
-el.classList.add('show');
-}
-})
-});
-</script>
+</div>
 
 </body>
 </html>
