@@ -4,169 +4,170 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sanjay Prasanna | Senior AI Engineer</title>
+<title>Sanjay Prasanna | AI Engineer</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
 body {
-  background: #020617;
+  background: radial-gradient(circle at top, #0a3f3f, #021c1c);
   color: #e2e8f0;
   font-family: Arial;
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-}
-
+/* card */
 .card {
-  background: rgba(30,41,59,0.6);
-  padding: 20px;
+  background: rgba(15, 23, 42, 0.6);
   border-radius: 12px;
-  margin-bottom: 20px;
-  border-left: 4px solid #6366f1;
+  padding: 20px;
+  transition: 0.4s;
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 25px rgba(34,211,238,0.3);
 }
 
+/* timeline */
 .timeline {
-  border-left: 2px solid #6366f1;
-  padding-left: 20px;
+  position: relative;
+  margin: 50px 0;
 }
 
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(#22d3ee,#0ea5a4);
+  transform: translateX(-50%);
+}
+
+/* items */
 .timeline-item {
-  margin-bottom: 30px;
+  width: 45%;
+  padding: 20px;
   position: relative;
 }
 
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -10px;
-  top: 5px;
-  width: 12px;
-  height: 12px;
-  background: #6366f1;
-  border-radius: 50%;
+/* left */
+.timeline-item.left {
+  left: 0;
+  text-align: right;
 }
 
-h1, h2 {
-  font-weight: bold;
+/* right */
+.timeline-item.right {
+  left: 55%;
+}
+
+/* dots */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 15px;
+  height: 15px;
+  background: #22d3ee;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #22d3ee;
+}
+
+/* left dot */
+.timeline-item.left::before {
+  right: -30px;
+}
+
+/* right dot */
+.timeline-item.right::before {
+  left: -30px;
+}
+
+/* animation */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="max-w-6xl mx-auto px-6">
 
 <!-- HERO -->
-<div class="text-center mb-12">
-  <img src="profile.jpg" class="mx-auto w-48 h-48 rounded-full border-4 border-indigo-500 mb-4">
+<div class="text-center py-16 fade">
+<img src="profile.jpg" class="mx-auto w-44 h-44 rounded-full border-4 border-teal-400 mb-4">
 
-  <h1 class="text-4xl">Sanjay Prasanna</h1>
-  <p class="text-gray-400 mt-2">Senior AI & Full-Stack Engineer • 10+ Years</p>
+<h1 class="text-4xl font-bold">Sanjay Prasanna</h1>
+<p class="text-gray-400 mt-2">Senior AI & Full-Stack Engineer • 10+ Years</p>
 
-  <div class="mt-4">
-    <a href="/resume.pdf" target="_blank" class="bg-indigo-600 px-5 py-2 rounded mr-2">Resume</a>
-    <a href="#contact" class="border border-indigo-500 px-5 py-2 rounded">Contact</a>
-  </div>
+<div class="mt-5">
+<a href="/resume.pdf" target="_blank" class="bg-teal-500 px-5 py-2 rounded mr-2">Resume</a>
+<a href="#contact" class="border border-teal-400 px-5 py-2 rounded">Contact</a>
 </div>
-
-<!-- SUMMARY -->
-<div class="card">
-  <h2>Professional Summary</h2>
-  <p class="mt-2 text-gray-400">
-    Senior Software Engineer with 10+ years of experience in banking and healthcare.
-    Specialized in AI-powered systems, DevSecOps pipelines, and enterprise-scale cloud deployments.
-  </p>
-</div>
-
-<!-- SKILLS -->
-<div class="card">
-  <h2>Technical Skills</h2>
-  <ul class="mt-2 text-gray-400">
-    <li>AI: Chatbots, Copilot</li>
-    <li>Frontend: Angular (7–18), Vue.js</li>
-    <li>Backend: Java, Node.js, Spring Boot</li>
-    <li>DevSecOps: Snyk, AquaScan, Vault, CI/CD</li>
-    <li>Cloud: OpenShift, Containers</li>
-  </ul>
 </div>
 
 <!-- TIMELINE -->
-<div class="card">
-<h2>Career Timeline</h2>
+<h2 class="text-2xl font-bold text-center mb-10 fade">Career Timeline</h2>
 
-<div class="timeline mt-4">
+<div class="timeline">
 
-<div class="timeline-item">
-<h3>2024 – 2026 (Banking - SLASE & Credit Risk)</h3>
-<ul class="text-gray-400 mt-2">
-<li>• Built full-stack systems using Vue + Java</li>
-<li>• Integrated GitHub Copilot for productivity</li>
-<li>• DevSecOps pipelines with AquaScan & Snyk</li>
-<li>• Automated deployments using GitHub Actions</li>
-</ul>
+<!-- 2024 -->
+<div class="timeline-item left card fade">
+<h3>2024 – Present</h3>
+<p class="text-gray-400">
+SLASE Banking System<br>
+Vue + Java full-stack development<br>
+DevSecOps with AquaScan & Snyk<br>
+GitHub Actions automation
+</p>
 </div>
 
-<div class="timeline-item">
-<h3>2020 – 2023 (RBC Risk Platform)</h3>
-<ul class="text-gray-400 mt-2">
-<li>• Led Angular 14 → 18 migration</li>
-<li>• Node.js + HashiCorp Vault integration</li>
-<li>• OpenShift OCP3 → OCP4 migration</li>
-<li>• Built risk monitoring system</li>
-</ul>
+<!-- 2020 -->
+<div class="timeline-item right card fade">
+<h3>2020 – 2023</h3>
+<p class="text-gray-400">
+RBC Risk Platform<br>
+Angular 14 → 18 Migration<br>
+Node.js + Vault integration<br>
+OpenShift migration
+</p>
 </div>
 
-<div class="timeline-item">
-<h3>2017 – 2020 (Healthcare Systems)</h3>
-<ul class="text-gray-400 mt-2">
-<li>• Angular + Spring Boot modules</li>
-<li>• Secure deployment pipelines</li>
-<li>• US healthcare applications</li>
-</ul>
+<!-- 2017 -->
+<div class="timeline-item left card fade">
+<h3>2017 – 2020</h3>
+<p class="text-gray-400">
+Healthcare Systems<br>
+Angular + Spring Boot<br>
+Secure enterprise pipelines
+</p>
 </div>
 
-<div class="timeline-item">
-<h3>2016 – 2017 (Early Career)</h3>
-<ul class="text-gray-400 mt-2">
-<li>• UI development using HTML, CSS, Bootstrap</li>
-<li>• Built templates using OpenText Exstream</li>
-</ul>
+<!-- 2016 -->
+<div class="timeline-item right card fade">
+<h3>2016 – 2017</h3>
+<p class="text-gray-400">
+UI Development<br>
+HTML, CSS, Bootstrap<br>
+OpenText Exstream
+</p>
 </div>
 
-</div>
-</div>
-
-<!-- PROJECTS -->
-<div class="card">
-<h2>Key Projects</h2>
-
-<ul class="text-gray-400 mt-2">
-<li>• AI Portfolio Chatbot using OpenAI + Vercel</li>
-<li>• DevSecOps pipeline with security scanning</li>
-<li>• Banking risk monitoring platform</li>
-<li>• Healthcare enterprise systems</li>
-</ul>
-</div>
-
-<!-- ACHIEVEMENTS -->
-<div class="card">
-<h2>Achievements</h2>
-<ul class="text-gray-400 mt-2">
-<li>• Completed Angular 14 → 18 migration single-handedly</li>
-<li>• Led OCP3 → OCP4 infrastructure migration</li>
-<li>• Associate of the Month (2019)</li>
-</ul>
 </div>
 
 <!-- CONTACT -->
-<div id="contact" class="card text-center">
-<h2>Contact</h2>
+<div id="contact" class="text-center py-16 fade">
+<h2 class="text-2xl font-bold mb-4">Contact</h2>
 
-<p class="mt-2">📧 sanjucena09@gmail.com</p>
+<p>📧 sanjucena09@gmail.com</p>
 <p>📱 +91 97157 88484</p>
 
 <a href="https://www.linkedin.com/in/sanjay-prasanna-a831b273" target="_blank">
@@ -175,6 +176,18 @@ h1, h2 {
 </div>
 
 </div>
+
+<script>
+// animation
+const items = document.querySelectorAll('.fade');
+window.addEventListener('scroll', ()=>{
+items.forEach(el=>{
+if(el.getBoundingClientRect().top < window.innerHeight-50){
+el.classList.add('show');
+}
+})
+});
+</script>
 
 </body>
 </html>
