@@ -15,7 +15,6 @@ body {
   font-family: Arial;
 }
 
-/* glow card */
 .card {
   background: rgba(30,41,59,0.6);
   backdrop-filter: blur(12px);
@@ -23,11 +22,10 @@ body {
   transition: 0.4s;
 }
 .card:hover {
-  transform: translateY(-8px) scale(1.01);
+  transform: translateY(-8px);
   box-shadow: 0 0 25px rgba(99,102,241,0.2);
 }
 
-/* animation */
 .fade {
   opacity: 0;
   transform: translateY(40px);
@@ -38,7 +36,6 @@ body {
   transform: translateY(0);
 }
 
-/* gradient text */
 .gradient {
   background: linear-gradient(90deg,#38bdf8,#6366f1,#8b5cf6);
   -webkit-background-clip: text;
@@ -51,124 +48,44 @@ body {
 
 <!-- HERO -->
 <section class="text-center py-24 fade">
-<img src="profile.jpg" class="mx-auto w-44 h-44 rounded-full shadow-xl mb-6 border-4 border-indigo-500">
+<img src="profile.jpg" class="mx-auto w-44 h-44 rounded-full border-4 border-indigo-500 shadow-xl mb-6">
 
 <h1 class="text-5xl font-bold">
 Sanjay <span class="gradient">Prasanna</span>
 </h1>
 
 <p class="mt-4 text-lg text-gray-400">
-Senior AI & Full-Stack Engineer • 10+ Years • DevSecOps
-</p>
-
-<p class="max-w-2xl mx-auto mt-5 text-gray-500">
-Building AI-powered enterprise systems across banking and healthcare. Expert in Java, Node.js, Angular, and secure DevSecOps pipelines.
+Senior AI & Full-Stack Engineer • 10+ Years
 </p>
 
 <div class="mt-6 space-x-4">
-<a href="/resume.pdf" class="bg-indigo-600 px-6 py-3 rounded-lg shadow">Resume</a>
-<a href="#projects" class="border border-indigo-500 px-6 py-3 rounded-lg">Projects</a>
-</div>
-</section>
-
-<!-- SKILLS -->
-<section class="py-16 fade">
-<h2 class="text-3xl font-bold text-center mb-10">Technical Expertise</h2>
-
-<div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-
-<div class="card p-6 rounded-xl">
-<b>AI & Web</b>
-<p>AI Chatbots, Copilot, Angular 7–18, Vue, TypeScript</p>
-</div>
-
-<div class="card p-6 rounded-xl">
-<b>Backend</b>
-<p>Java, Spring Boot, Node.js, REST APIs</p>
-</div>
-
-<div class="card p-6 rounded-xl">
-<b>DevSecOps</b>
-<p>GitHub Actions, Snyk, AquaScan, Vault</p>
-</div>
-
-<div class="card p-6 rounded-xl">
-<b>Cloud</b>
-<p>OpenShift, Containers, CI/CD Pipelines</p>
-</div>
-
-</div>
-</section>
-
-<!-- EXPERIENCE -->
-<section class="py-16 fade">
-<h2 class="text-3xl font-bold text-center mb-10">Experience</h2>
-
-<div class="max-w-3xl mx-auto border-l border-gray-700 pl-6 space-y-10">
-
-<div>
-<h3 class="font-bold text-lg">Cognizant Technology Solutions</h3>
-<p class="text-sm text-gray-400">2016 – Present</p>
-<ul class="mt-2 text-gray-500 space-y-1">
-<li>• Built secure enterprise apps using Vue.js & Java</li>
-<li>• Integrated AI tools like GitHub Copilot</li>
-<li>• Implemented DevSecOps pipelines</li>
-<li>• Led Angular 14 → 18 migration</li>
-<li>• Managed OpenShift deployments</li>
-</ul>
-</div>
-
-<div>
-<h3 class="font-bold text-lg">RBC Risk Platform</h3>
-<ul class="mt-2 text-gray-500">
-<li>• Built risk monitoring system</li>
-<li>• Node.js + Vault integration</li>
-<li>• Cloud migration OCP3 → OCP4</li>
-</ul>
-</div>
-
-</div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="py-16 fade">
-<h2 class="text-3xl font-bold text-center mb-10">Key Work</h2>
-
-<div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-
-<div class="card p-6 rounded-xl">
-<h3 class="font-bold">AI Portfolio System</h3>
-<p class="text-gray-400 mt-2">
-Built a serverless AI chatbot portfolio using OpenAI APIs.
-</p>
-</div>
-
-<div class="card p-6 rounded-xl">
-<h3 class="font-bold">DevSecOps Pipeline</h3>
-<p class="text-gray-400 mt-2">
-Secure CI/CD pipelines with integrated vulnerability scanning.
-</p>
-</div>
-
+<a href="/resume.pdf" class="bg-indigo-600 px-6 py-3 rounded-lg">Resume</a>
 </div>
 </section>
 
 <!-- CHATBOT -->
 <div class="fixed bottom-5 right-5">
-<button onclick="toggleChat()" class="bg-indigo-600 px-4 py-3 rounded-full text-white shadow-xl">
-💬
-</button>
+<button onclick="toggleChat()" class="bg-indigo-600 px-4 py-3 rounded-full text-white shadow-xl">💬</button>
 
 <div id="chatbox" class="hidden mt-2 w-80 bg-slate-900 p-4 rounded-xl shadow-xl">
 <div id="chatlog" class="text-sm space-y-2 mb-3 h-52 overflow-y-auto"></div>
 
-<input id="userInput" type="text" placeholder="Ask about my experience..."
+<input id="userInput" type="text" placeholder="Ask about me..."
 class="w-full p-2 rounded bg-slate-800 text-white"
 onkeydown="handleKey(event)">
+
+<!-- QUICK BUTTONS -->
+<div class="flex flex-wrap gap-2 mt-2">
+<button onclick="askQuick('What is your experience')" class="text-xs bg-indigo-600 px-2 py-1 rounded">Experience</button>
+<button onclick="askQuick('What are your skills')" class="text-xs bg-indigo-600 px-2 py-1 rounded">Skills</button>
+<button onclick="askQuick('Explain your projects')" class="text-xs bg-indigo-600 px-2 py-1 rounded">Projects</button>
+</div>
+
 </div>
 </div>
 
 <script>
+// animation
 const items = document.querySelectorAll('.fade');
 window.addEventListener('scroll', ()=>{
 items.forEach(el=>{
@@ -178,10 +95,18 @@ el.classList.add('show');
 })
 });
 
+// toggle chat
 function toggleChat(){
 document.getElementById('chatbox').classList.toggle('hidden');
 }
 
+// quick ask
+function askQuick(text){
+document.getElementById('userInput').value = text;
+handleKey({ key: 'Enter', target: document.getElementById('userInput') });
+}
+
+// chatbot
 async function handleKey(e){
 if(e.key === 'Enter'){
 let input = e.target.value.trim();
