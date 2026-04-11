@@ -96,7 +96,6 @@ class="mx-auto w-40 h-40 rounded-full border-4 border-[#00b4d8] mb-4">
 <p class="text-gray-400 mt-2">
 Senior Full Stack Engineer • AI • DevSecOps
 </p>
-
 </div>
 
 <!-- SUMMARY -->
@@ -203,49 +202,82 @@ placeholder="Ask...">
 
 <script>
 
-const chatbot=document.getElementById("chatbot");
-const chatbox=document.getElementById("chatbox");
+const chatbot = document.getElementById("chatbot");
+const chatbox = document.getElementById("chatbox");
 
-let moved=false;
+let isDragging = false;
+let offsetX, offsetY;
+let moved = false;
 
-chatbot.addEventListener("click",()=>{
-if(!moved) chatbox.classList.toggle("hidden");
-moved=false;
+/* CLICK */
+chatbot.addEventListener("click", () => {
+  if (!moved) chatbox.classList.toggle("hidden");
+  moved = false;
 });
 
-let isDragging=false,offsetX,offsetY;
-
-chatbot.addEventListener("mousedown",(e)=>{
-isDragging=true;
-offsetX=e.clientX-chatbot.offsetLeft;
-offsetY=e.clientY-chatbot.offsetTop;
+/* DRAG */
+chatbot.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  moved = false;
+  offsetX = e.clientX - chatbot.offsetLeft;
+  offsetY = e.clientY - chatbot.offsetTop;
 });
 
-document.addEventListener("mousemove",(e)=>{
-if(isDragging){
-moved=true;
-chatbot.style.left=(e.clientX-offsetX)+"px";
-chatbot.style.top=(e.clientY-offsetY)+"px";
-chatbot.style.right="auto";
-chatbot.style.bottom="auto";
+document.addEventListener("mousemove", (e) => {
+  if (isDragging) {
+    moved = true;
 
-chatbox.style.left=chatbot.style.left;
-chatbox.style.top=(chatbot.offsetTop-320)+"px";
+    chatbot.style.left = (e.clientX - offsetX) + "px";
+    chatbot.style.top = (e.clientY - offsetY) + "px";
+    chatbot.style.right = "auto";
+    chatbot.style.bottom = "auto";
+
+    chatbox.style.left = chatbot.style.left;
+    chatbox.style.top = (chatbot.offsetTop - 320) + "px";
+  }
+});
+
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+});
+
+/* CHAT API */
+async function sendMessage() {
+  let inputBox = document.getElementById("userInput");
+  let input = inputBox.value.trim();
+  if (!input) return;
+
+  let log = document.getElementById("chatlog");
+
+  log.innerHTML += `<div>👤 ${input}</div>`;
+  log.innerHTML += `<div style="color:#94a3b8">Thinking...</div>`;
+
+  try {
+    let res = await fetch("/api/chat", {
+      method: "POST",
+      headers: {"Content-Type":"application/json"},
+      body: JSON.stringify({message:input})
+    });
+
+    let data = await res.json();
+
+    log.lastChild.remove();
+    log.innerHTML += `<div style="color:#00b4d8">🤖 ${data.reply}</div>`;
+  } catch {
+    log.lastChild.remove();
+    log.innerHTML += `<div style="color:red">API Error</div>`;
+  }
+
+  inputBox.value="";
+  log.scrollTop = log.scrollHeight;
 }
+
+/* ENTER */
+document.getElementById("userInput").addEventListener("keydown",(e)=>{
+if(e.key==="Enter") sendMessage();
 });
 
-document.addEventListener("mouseup",()=>isDragging=false);
-
-/* chat */
-function sendMessage(){
-let input=document.getElementById("userInput").value;
-if(!input) return;
-let log=document.getElementById("chatlog");
-log.innerHTML+="<div>👤 "+input+"</div>";
-document.getElementById("userInput").value="";
-}
-
-/* voice */
+/* VOICE */
 function startVoice(){
 const rec=new (window.SpeechRecognition||window.webkitSpeechRecognition)();
 rec.onresult=(e)=>{
