@@ -15,59 +15,36 @@ body {
     radial-gradient(circle at 20% 10%, rgba(0,180,216,0.08), transparent 40%),
     radial-gradient(circle at 80% 90%, rgba(0,119,182,0.1), transparent 40%),
     #020c14;
-  color: #e2e8f0;
-  font-family: Arial;
+  color:#e2e8f0;
+  font-family:Arial;
 }
 
 .container {
-  max-width: 1300px;
-  margin: auto;
-  padding: 40px 20px;
+  max-width:1200px;
+  margin:auto;
+  padding:30px;
 }
 
-.section { margin-bottom: 60px; }
-
 .heading {
-  font-size: 28px;
-  font-weight: bold;
-  color: #00b4d8;
-  margin-bottom: 20px;
+  color:#00b4d8;
+  font-size:26px;
+  margin-bottom:15px;
 }
 
 .card {
-  background: linear-gradient(145deg,#0b1a2a,#0f172a);
-  border-radius: 14px;
-  padding: 20px;
-  border: 1px solid rgba(0,180,216,0.2);
-  margin-bottom: 15px;
-  transition: 0.3s;
+  background:#0f172a;
+  padding:20px;
+  border-radius:12px;
+  border:1px solid rgba(0,180,216,0.2);
+  margin-bottom:15px;
+  transition:0.3s;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(0,180,216,0.2);
+  transform:translateY(-4px);
+  box-shadow:0 0 20px rgba(0,180,216,0.2);
 }
 
-.btn {
-  padding: 10px 18px;
-  border-radius: 6px;
-  margin: 5px;
-}
-
-.btn-primary { background: #0077b6; }
-.btn-outline { border: 1px solid #00b4d8; }
-
-/* chatbot float */
-@keyframes floaty {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-#chatbotIcon {
-  animation: floaty 3s ease-in-out infinite;
-}
-
-/* FIXED BUTTON STYLE */
 .icon-btn {
   width:36px;
   height:36px;
@@ -75,15 +52,23 @@ body {
   align-items:center;
   justify-content:center;
   background:#1e293b;
-  color:white;
   border-radius:6px;
   border:1px solid #334155;
-  font-size:16px;
+  cursor:pointer;
+}
+
+.icon-btn svg {
+  width:18px;
+  height:18px;
+  fill:white;
 }
 
 .icon-btn:hover {
   background:#00b4d8;
-  color:black;
+}
+
+.icon-btn:hover svg {
+  fill:black;
 }
 
 </style>
@@ -93,71 +78,25 @@ body {
 
 <div class="container">
 
-<!-- HERO -->
-<div class="text-center section">
-<img src="./profile.jpg" class="mx-auto w-44 h-44 rounded-full border-4 border-[#00b4d8] mb-4">
+<h1 class="text-3xl font-bold text-center mb-6">Sanjay Prasanna</h1>
 
-<h1 class="text-4xl font-bold">Sanjay Prasanna</h1>
-<p class="text-gray-400 mt-2">Senior AI & Full Stack Engineer • 10+ Years</p>
-
-<div class="mt-4">
-<a href="./resume_v2.pdf" target="_blank" class="btn btn-primary">📄 Resume</a>
-<a href="#contact" class="btn btn-outline">Contact</a>
-</div>
-</div>
-
-<!-- SUMMARY -->
-<div class="section">
 <div class="heading">Summary</div>
 <div class="card">
-Experienced full stack developer specializing in AI, banking, and secure applications.
-</div>
+Senior Full Stack Developer with expertise in AI, banking systems, and secure enterprise applications.
 </div>
 
-<!-- SKILLS -->
-<div class="section">
 <div class="heading">Skills</div>
-
-<div class="grid md:grid-cols-3 gap-4">
-<div class="card">AI / Chatbots</div>
+<div class="card">AI / Chatbots / NLP</div>
 <div class="card">Vue / Angular</div>
-<div class="card">Java / Node</div>
-<div class="card">DevSecOps</div>
-<div class="card">Cloud / OpenShift</div>
-<div class="card">CI/CD</div>
-</div>
+<div class="card">Java / Node.js</div>
 
-</div>
-
-<!-- EXPERIENCE -->
-<div class="section">
 <div class="heading">Experience</div>
+<div class="card">SLASE Banking – Vue + Java, AI Integration</div>
+<div class="card">RBC – Angular Migration</div>
 
-<div class="card">
-<b>SLASE Banking</b>
-<ul>
-<li>Vue + Java</li>
-<li>AI integrations</li>
-</ul>
-</div>
-
-<div class="card">
-<b>RBC</b>
-<ul>
-<li>Angular upgrade</li>
-</ul>
-</div>
-
-</div>
-
-<!-- CONTACT -->
-<div id="contact" class="section text-center">
 <div class="heading">Contact</div>
-
-<a href="mailto:sanjucena09@gmail.com" class="btn btn-primary block mb-2">Email</a>
-<a href="tel:+919715788484" class="btn btn-outline block mb-2">Call</a>
-
-</div>
+<div class="card">📧 sanjucena09@gmail.com</div>
+<div class="card">📱 9715788484</div>
 
 </div>
 
@@ -166,20 +105,31 @@ Experienced full stack developer specializing in AI, banking, and secure applica
 style="position:fixed; bottom:20px; right:20px; z-index:1000; cursor:pointer;">
 
 <img src="./chutki.jpg"
-id="chatbotIcon"
-style="object-fit:cover; object-position:center 30%;"
-class="w-20 h-20 rounded-full border-2 border-[#00b4d8] shadow-lg">
+onerror="this.src='https://via.placeholder.com/80'"
+style="
+width:80px;height:80px;border-radius:50%;
+object-fit:cover;
+object-position:center 40%;
+border:2px solid #00b4d8;
+box-shadow:0 0 15px rgba(0,180,216,0.4);
+">
 
 </div>
 
 <!-- CHATBOX -->
 <div id="chatbox" class="hidden"
-style="position:fixed; bottom:100px; right:20px; width:300px; background:#0f172a; padding:15px; border-radius:12px; border:1px solid #00b4d8;">
+style="position:fixed; bottom:110px; right:20px; width:300px;
+background:#0f172a; padding:15px; border-radius:12px;
+border:1px solid #00b4d8;">
 
 <div style="display:flex; gap:10px; margin-bottom:10px;">
 <img src="./chutki.jpg"
-style="object-fit:cover; object-position:center 30%;"
-class="w-10 h-10 rounded-full">
+onerror="this.src='https://via.placeholder.com/40'"
+style="
+width:40px;height:40px;border-radius:50%;
+object-fit:cover;
+object-position:center 40%;
+">
 
 <div>
 <div style="color:#00b4d8;font-weight:bold;">Chutki</div>
@@ -191,11 +141,26 @@ class="w-10 h-10 rounded-full">
 
 <div style="display:flex; gap:6px; margin-top:8px;">
 <input id="userInput"
-style="flex:1; padding:6px; border-radius:6px; background:#1e293b; color:white;"
-placeholder="Ask...">
+style="flex:1; padding:6px; border-radius:6px;
+background:#1e293b; color:white;"
+placeholder="Ask something...">
 
-<button class="icon-btn" onclick="startVoice()">🎤</button>
-<button class="icon-btn" onclick="sendMessage()">➤</button>
+<!-- MIC -->
+<button class="icon-btn" onclick="startVoice()">
+<svg viewBox="0 0 24 24">
+<path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/>
+<path d="M19 11a7 7 0 0 1-14 0"/>
+<line x1="12" y1="19" x2="12" y2="23"/>
+</svg>
+</button>
+
+<!-- SEND -->
+<button class="icon-btn" onclick="sendMessage()">
+<svg viewBox="0 0 24 24">
+<path d="M2 21l21-9L2 3v7l15 2-15 2z"/>
+</svg>
+</button>
+
 </div>
 
 </div>
@@ -237,7 +202,7 @@ chatbox.style.top=(chatbot.offsetTop-320)+"px";
 
 document.addEventListener("mouseup",()=>isDragging=false);
 
-/* chat */
+/* send */
 function sendMessage(){
 let input=document.getElementById("userInput").value;
 if(!input) return;
