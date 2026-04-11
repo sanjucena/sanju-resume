@@ -25,10 +25,15 @@ body {
   padding:30px;
 }
 
+.section {
+  margin-bottom:60px;
+}
+
 .heading {
   color:#00b4d8;
-  font-size:26px;
-  margin-bottom:15px;
+  font-size:28px;
+  font-weight:bold;
+  margin-bottom:20px;
 }
 
 .card {
@@ -41,34 +46,14 @@ body {
 }
 
 .card:hover {
-  transform:translateY(-4px);
+  transform:translateY(-5px);
   box-shadow:0 0 20px rgba(0,180,216,0.2);
 }
 
-.icon-btn {
-  width:36px;
-  height:36px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#1e293b;
-  border-radius:6px;
-  border:1px solid #334155;
-  cursor:pointer;
-}
-
-.icon-btn svg {
-  width:18px;
-  height:18px;
-  fill:white;
-}
-
-.icon-btn:hover {
-  background:#00b4d8;
-}
-
-.icon-btn:hover svg {
-  fill:black;
+.grid-3 {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
 }
 
 </style>
@@ -78,149 +63,132 @@ body {
 
 <div class="container">
 
-<h1 class="text-3xl font-bold text-center mb-6">Sanjay Prasanna</h1>
+<!-- HERO -->
+<div class="section text-center">
+<img src="./profile.jpg"
+class="mx-auto w-40 h-40 rounded-full border-4 border-[#00b4d8] mb-4">
 
-<div class="heading">Summary</div>
-<div class="card">
-Senior Full Stack Developer with expertise in AI, banking systems, and secure enterprise applications.
+<h1 class="text-4xl font-bold">Sanjay Prasanna</h1>
+<p class="text-gray-400 mt-2">
+Senior Full Stack Engineer • AI • DevSecOps
+</p>
+
+<div class="mt-4">
+<a href="./resume_v2.pdf"
+class="px-4 py-2 bg-[#0077b6] rounded mr-2">Resume</a>
+
+<a href="#contact"
+class="px-4 py-2 border border-[#00b4d8] rounded">Contact</a>
+</div>
 </div>
 
+<!-- SUMMARY -->
+<div class="section">
+<div class="heading">Summary</div>
+<div class="card">
+10+ years experience building enterprise applications in banking and healthcare.
+Strong focus on AI integration, DevSecOps, and scalable frontend/backend systems.
+</div>
+</div>
+
+<!-- SKILLS -->
+<div class="section">
 <div class="heading">Skills</div>
+
+<div class="grid-3">
 <div class="card">AI / Chatbots / NLP</div>
 <div class="card">Vue / Angular</div>
 <div class="card">Java / Node.js</div>
+<div class="card">DevSecOps / Vault / Snyk</div>
+<div class="card">Cloud / OpenShift</div>
+<div class="card">CI/CD Pipelines</div>
+</div>
 
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section">
 <div class="heading">Experience</div>
-<div class="card">SLASE Banking – Vue + Java, AI Integration</div>
-<div class="card">RBC – Angular Migration</div>
 
+<div class="card">
+<b>2024 – Present | SLASE Banking</b>
+<ul>
+<li>Vue + Java development</li>
+<li>AI Copilot integration</li>
+<li>Security-first architecture</li>
+</ul>
+</div>
+
+<div class="card">
+<b>Wholesale Credit Risk</b>
+<ul>
+<li>CI/CD modernization</li>
+<li>Security automation pipelines</li>
+</ul>
+</div>
+
+<div class="card">
+<b>2020 – 2023 | RBC</b>
+<ul>
+<li>Angular migration</li>
+<li>Vault integration</li>
+</ul>
+</div>
+
+<div class="card">
+<b>2017 – 2020 | Healthcare</b>
+<ul>
+<li>Angular + Spring Boot apps</li>
+<li>Secure enterprise solutions</li>
+</ul>
+</div>
+
+</div>
+
+<!-- EDUCATION -->
+<div class="section">
+<div class="heading">Education</div>
+
+<div class="card">M.E – Sri Krishna College</div>
+<div class="card">B.E – KLN College</div>
+<div class="card">HSC – Mahatma Montessori</div>
+
+</div>
+
+<!-- CERTIFICATIONS -->
+<div class="section">
+<div class="heading">Certifications</div>
+
+<div class="card">React – Udemy</div>
+<div class="card">Angular – Besant</div>
+
+</div>
+
+<!-- ACHIEVEMENTS -->
+<div class="section">
+<div class="heading">Achievements</div>
+
+<div class="card">Angular Migration (14 → 18)</div>
+<div class="card">OCP Migration</div>
+<div class="card">Associate of the Month</div>
+
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section text-center">
 <div class="heading">Contact</div>
+
 <div class="card">📧 sanjucena09@gmail.com</div>
 <div class="card">📱 9715788484</div>
-
+<div class="card">
+💼 linkedin.com/in/sanjay-prasanna-a831b273
 </div>
-
-<!-- CHATBOT -->
-<div id="chatbot"
-style="position:fixed; bottom:20px; right:20px; z-index:1000; cursor:pointer;">
-
-<img src="./chutki.jpg"
-onerror="this.src='https://via.placeholder.com/80'"
-style="
-width:80px;height:80px;border-radius:50%;
-object-fit:cover;
-object-position:center 40%;
-border:2px solid #00b4d8;
-box-shadow:0 0 15px rgba(0,180,216,0.4);
-">
-
-</div>
-
-<!-- CHATBOX -->
-<div id="chatbox" class="hidden"
-style="position:fixed; bottom:110px; right:20px; width:300px;
-background:#0f172a; padding:15px; border-radius:12px;
-border:1px solid #00b4d8;">
-
-<div style="display:flex; gap:10px; margin-bottom:10px;">
-<img src="./chutki.jpg"
-onerror="this.src='https://via.placeholder.com/40'"
-style="
-width:40px;height:40px;border-radius:50%;
-object-fit:cover;
-object-position:center 40%;
-">
-
-<div>
-<div style="color:#00b4d8;font-weight:bold;">Chutki</div>
-<div style="font-size:12px;color:gray;">Ask me anything 😊</div>
-</div>
-</div>
-
-<div id="chatlog" style="height:120px; overflow:auto;"></div>
-
-<div style="display:flex; gap:6px; margin-top:8px;">
-<input id="userInput"
-style="flex:1; padding:6px; border-radius:6px;
-background:#1e293b; color:white;"
-placeholder="Ask something...">
-
-<!-- MIC -->
-<button class="icon-btn" onclick="startVoice()">
-<svg viewBox="0 0 24 24">
-<path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z"/>
-<path d="M19 11a7 7 0 0 1-14 0"/>
-<line x1="12" y1="19" x2="12" y2="23"/>
-</svg>
-</button>
-
-<!-- SEND -->
-<button class="icon-btn" onclick="sendMessage()">
-<svg viewBox="0 0 24 24">
-<path d="M2 21l21-9L2 3v7l15 2-15 2z"/>
-</svg>
-</button>
 
 </div>
 
 </div>
 
-<script>
-
-const chatbot=document.getElementById("chatbot");
-const chatbox=document.getElementById("chatbox");
-
-let moved=false;
-
-/* toggle */
-chatbot.addEventListener("click",()=>{
-if(!moved) chatbox.classList.toggle("hidden");
-moved=false;
-});
-
-/* drag */
-let isDragging=false,offsetX,offsetY;
-
-chatbot.addEventListener("mousedown",(e)=>{
-isDragging=true;
-offsetX=e.clientX-chatbot.offsetLeft;
-offsetY=e.clientY-chatbot.offsetTop;
-});
-
-document.addEventListener("mousemove",(e)=>{
-if(isDragging){
-moved=true;
-chatbot.style.left=(e.clientX-offsetX)+"px";
-chatbot.style.top=(e.clientY-offsetY)+"px";
-chatbot.style.right="auto";
-chatbot.style.bottom="auto";
-
-chatbox.style.left=chatbot.style.left;
-chatbox.style.top=(chatbot.offsetTop-320)+"px";
-}
-});
-
-document.addEventListener("mouseup",()=>isDragging=false);
-
-/* send */
-function sendMessage(){
-let input=document.getElementById("userInput").value;
-if(!input) return;
-let log=document.getElementById("chatlog");
-log.innerHTML+="<div>👤 "+input+"</div>";
-document.getElementById("userInput").value="";
-}
-
-/* voice */
-function startVoice(){
-const rec=new (window.SpeechRecognition||window.webkitSpeechRecognition)();
-rec.onresult=(e)=>{
-document.getElementById("userInput").value=e.results[0][0].transcript;
-};
-rec.start();
-}
-
-</script>
+<!-- ⚠️ KEEP YOUR EXISTING CHATBOT CODE BELOW THIS LINE (DO NOT MODIFY) -->
 
 </body>
 </html>
