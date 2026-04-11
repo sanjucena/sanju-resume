@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sanjay Prasanna</title>
+<title>Sanjay Prasanna | Portfolio</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -19,33 +19,68 @@ body {
   font-family: Arial;
 }
 
-/* floating animation */
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.section { margin-bottom: 70px; }
+
+.heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #00b4d8;
+  margin-bottom: 20px;
+}
+
+/* cards */
+.card {
+  background: linear-gradient(145deg,#0b1a2a,#0f172a);
+  border-radius: 14px;
+  padding: 22px;
+  border: 1px solid rgba(0,180,216,0.2);
+  transition: 0.3s;
+  margin-bottom: 15px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0,180,216,0.2);
+}
+
+/* buttons */
+.btn {
+  padding: 10px 18px;
+  border-radius: 6px;
+  margin: 5px;
+}
+
+.btn-primary {
+  background: #0077b6;
+}
+
+.btn-primary:hover {
+  background: #00b4d8;
+}
+
+.btn-outline {
+  border: 1px solid #00b4d8;
+}
+
+.btn-outline:hover {
+  background: #00b4d8;
+  color: black;
+}
+
+/* chatbot animation */
 @keyframes floaty {
   0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-6px); }
 }
 
 #chatbotIcon {
   animation: floaty 3s ease-in-out infinite;
-  transition: transform 0.2s;
-}
-
-#chatbotIcon:hover {
-  transform: scale(1.1);
-}
-
-.card {
-  background: #0f172a;
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid rgba(0,180,216,0.2);
-  margin-bottom: 15px;
-}
-
-.heading {
-  color: #00b4d8;
-  font-size: 26px;
-  margin-bottom: 15px;
 }
 
 </style>
@@ -53,30 +88,131 @@ body {
 
 <body>
 
-<div class="max-w-5xl mx-auto p-6">
+<div class="container">
 
-<h1 class="text-3xl font-bold text-center">Sanjay Prasanna</h1>
+<!-- HERO -->
+<div class="text-center section">
+<img src="./profile.jpg" class="mx-auto w-44 h-44 rounded-full border-4 border-[#00b4d8] mb-4">
 
-<div class="heading mt-8">Experience</div>
+<h1 class="text-4xl font-bold">Sanjay Prasanna</h1>
+<p class="text-gray-400 mt-2">Senior AI & Full Stack Engineer • 10+ Years</p>
 
-<div class="card">SLASE – Vue + Java, AI Integration</div>
-<div class="card">RBC – Angular Migration</div>
-<div class="card">Healthcare – Secure Apps</div>
+<div class="mt-4">
+<a href="./resume_v2.pdf" target="_blank" class="btn btn-primary">📄 Resume</a>
+<a href="#contact" class="btn btn-outline">Contact</a>
+</div>
+</div>
 
-<div class="heading mt-8">Contact</div>
+<!-- SUMMARY -->
+<div class="section">
+<div class="heading">Summary</div>
+<div class="card">
+Experienced software engineer with strong background in AI, DevSecOps, banking & healthcare systems.
+</div>
+</div>
 
-<div class="card">📧 sanjucena09@gmail.com</div>
-<div class="card">📱 9715788484</div>
+<!-- SKILLS -->
+<div class="section">
+<div class="heading">Skills</div>
+
+<div class="grid md:grid-cols-3 gap-4">
+<div class="card">AI / Chatbots / NLP</div>
+<div class="card">Angular / Vue</div>
+<div class="card">Java / Node.js</div>
+<div class="card">DevSecOps / Snyk / Vault</div>
+<div class="card">OpenShift / Cloud</div>
+<div class="card">CI/CD / GitHub Actions</div>
+</div>
+
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section">
+<div class="heading">Experience</div>
+
+<div class="card">
+<h3>2024 – Present | SLASE Banking</h3>
+<ul>
+<li>Vue + Java full stack</li>
+<li>Copilot AI usage</li>
+<li>Security integrations</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Wholesale Credit Risk</h3>
+<ul>
+<li>CI/CD migration</li>
+<li>Security scanning</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>2020 – 2023 | RBC</h3>
+<ul>
+<li>Angular upgrade</li>
+<li>Vault integration</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>2017 – 2020 | Healthcare</h3>
+<ul>
+<li>Angular + Spring Boot</li>
+<li>Secure pipelines</li>
+</ul>
+</div>
+
+</div>
+
+<!-- EDUCATION -->
+<div class="section">
+<div class="heading">Education</div>
+
+<div class="card">M.E – Sri Krishna College</div>
+<div class="card">B.E – KLN College</div>
+<div class="card">HSC – Mahatma Montessori</div>
+
+</div>
+
+<!-- CERTIFICATIONS -->
+<div class="section">
+<div class="heading">Certifications</div>
+
+<div class="card">React – Udemy</div>
+<div class="card">Angular – Besant</div>
+
+</div>
+
+<!-- ACHIEVEMENTS -->
+<div class="section">
+<div class="heading">Achievements</div>
+
+<div class="card">Angular Migration (14 → 18)</div>
+<div class="card">OCP Migration</div>
+<div class="card">Associate of the Month</div>
+
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section text-center">
+<div class="heading">Contact</div>
+
+<a href="mailto:sanjucena09@gmail.com" class="btn btn-primary block mb-2">📧 Email</a>
+<a href="tel:+919715788484" class="btn btn-outline block mb-2">📱 Call</a>
+<a href="https://www.linkedin.com/in/sanjay-prasanna-a831b273" target="_blank" class="btn btn-outline block">💼 LinkedIn</a>
+
+</div>
 
 </div>
 
 <!-- CHATBOT -->
-<div id="chatbot" class="fixed bottom-6 right-6 cursor-pointer z-50">
+<div id="chatbot" class="fixed bottom-6 right-6 z-50 cursor-pointer">
 
-<img src="https://raw.githubusercontent.com/sanjucena/sanju-resume/main/chutki.jpg"
-     id="chatbotIcon"
-     onerror="this.src='https://via.placeholder.com/80?text=C'"
-     class="w-20 h-20 rounded-full object-cover border-2 border-[#00b4d8] shadow-lg">
+<img src="./chutki.jpg"
+id="chatbotIcon"
+onerror="this.src='https://via.placeholder.com/80?text=C'"
+class="w-20 h-20 rounded-full object-cover border-2 border-[#00b4d8] shadow-lg">
 
 </div>
 
@@ -86,8 +222,9 @@ class="hidden fixed bottom-28 right-6 w-80 bg-[#0f172a] p-4 rounded-xl border bo
 
 <div class="flex items-center gap-3 mb-3">
 
-<img src="https://raw.githubusercontent.com/sanjucena/sanju-resume/main/chutki.jpg"
-     class="w-10 h-10 rounded-full object-cover">
+<img src="./chutki.jpg"
+onerror="this.src='https://via.placeholder.com/40?text=C'"
+class="w-10 h-10 rounded-full object-cover">
 
 <div>
 <p class="text-[#00b4d8] font-bold">Chutki</p>
@@ -102,7 +239,6 @@ class="hidden fixed bottom-28 right-6 w-80 bg-[#0f172a] p-4 rounded-xl border bo
 class="w-full p-2 rounded bg-slate-800 text-white"
 placeholder="Ask something..."
 onkeydown="handleKey(event)">
-
 </div>
 
 <script>
@@ -114,7 +250,6 @@ document.getElementById("chatbot").onclick = () => {
 
 /* drag */
 const chatbot = document.getElementById("chatbot");
-
 let isDragging=false,offsetX,offsetY;
 
 chatbot.addEventListener("mousedown",(e)=>{
@@ -134,7 +269,7 @@ chatbot.style.bottom="auto";
 
 document.addEventListener("mouseup",()=>isDragging=false);
 
-/* mobile drag */
+/* mobile */
 chatbot.addEventListener("touchstart",(e)=>{
 isDragging=true;
 offsetX=e.touches[0].clientX-chatbot.offsetLeft;
