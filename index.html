@@ -34,7 +34,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* cards */
 .card {
   background: linear-gradient(145deg,#0b1a2a,#0f172a);
   border-radius: 14px;
@@ -49,7 +48,6 @@ body {
   box-shadow: 0 0 20px rgba(0,180,216,0.2);
 }
 
-/* buttons */
 .btn {
   padding: 10px 18px;
   border-radius: 6px;
@@ -60,17 +58,8 @@ body {
   background: #0077b6;
 }
 
-.btn-primary:hover {
-  background: #00b4d8;
-}
-
 .btn-outline {
   border: 1px solid #00b4d8;
-}
-
-.btn-outline:hover {
-  background: #00b4d8;
-  color: black;
 }
 
 /* floating animation */
@@ -81,6 +70,19 @@ body {
 
 #chatbotIcon {
   animation: floaty 3s ease-in-out infinite;
+}
+
+.icon-btn {
+  background:#1e293b;
+  color:white;
+  padding:6px 10px;
+  border-radius:6px;
+  font-size:16px;
+}
+
+.icon-btn:hover {
+  background:#00b4d8;
+  color:black;
 }
 
 </style>
@@ -173,21 +175,6 @@ Experienced full stack developer specializing in AI integrations, banking system
 <div class="card">HSC – Mahatma Montessori</div>
 </div>
 
-<!-- CERTIFICATIONS -->
-<div class="section">
-<div class="heading">Certifications</div>
-<div class="card">React – Udemy</div>
-<div class="card">Angular – Besant</div>
-</div>
-
-<!-- ACHIEVEMENTS -->
-<div class="section">
-<div class="heading">Achievements</div>
-<div class="card">Angular Migration (14 → 18)</div>
-<div class="card">OCP Migration</div>
-<div class="card">Associate of the Month</div>
-</div>
-
 <!-- CONTACT -->
 <div id="contact" class="section text-center">
 <div class="heading">Contact</div>
@@ -201,11 +188,11 @@ Experienced full stack developer specializing in AI integrations, banking system
 </div>
 
 <!-- CHATBOT -->
-<div id="chatbot" style="position:fixed; bottom:20px; right:20px; z-index:1000;">
+<div id="chatbot" style="position:fixed; bottom:20px; right:20px; z-index:1000; cursor:pointer;">
 
 <img src="./chutki.jpg"
 id="chatbotIcon"
-class="w-20 h-20 rounded-full object-cover object-top border-2 border-[#00b4d8] shadow-lg cursor-pointer">
+class="w-20 h-20 rounded-full object-cover object-top border-2 border-[#00b4d8] shadow-lg">
 
 </div>
 
@@ -223,13 +210,13 @@ style="position:fixed; bottom:100px; right:20px; width:300px; background:#0f172a
 
 <div id="chatlog" style="height:120px; overflow:auto;"></div>
 
-<div style="display:flex; gap:5px; margin-top:8px;">
+<div style="display:flex; gap:6px; margin-top:8px;">
 <input id="userInput"
 style="flex:1; padding:6px; border-radius:6px; background:#1e293b; color:white;"
 placeholder="Ask...">
 
-<button onclick="startVoice()">🎤</button>
-<button onclick="sendMessage()">➤</button>
+<button class="icon-btn" onclick="startVoice()">🎤</button>
+<button class="icon-btn" onclick="sendMessage()">➤</button>
 </div>
 
 </div>
@@ -239,12 +226,12 @@ placeholder="Ask...">
 const chatbot = document.getElementById("chatbot");
 const chatbox = document.getElementById("chatbox");
 
-let moved = false;
+let moved=false;
 
 /* toggle */
-chatbot.addEventListener("click", () => {
-  if (!moved) chatbox.classList.toggle("hidden");
-  moved = false;
+chatbot.addEventListener("click",()=>{
+if(!moved) chatbox.classList.toggle("hidden");
+moved=false;
 });
 
 /* drag */
@@ -274,6 +261,7 @@ document.addEventListener("mouseup",()=>isDragging=false);
 /* chat */
 function sendMessage(){
 let input=document.getElementById("userInput").value;
+if(!input) return;
 let log=document.getElementById("chatlog");
 log.innerHTML+="<div>👤 "+input+"</div>";
 document.getElementById("userInput").value="";
