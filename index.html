@@ -25,7 +25,7 @@ body {
   padding: 40px 20px;
 }
 
-.section { margin-bottom: 70px; }
+.section { margin-bottom: 60px; }
 
 .heading {
   font-size: 28px;
@@ -34,10 +34,11 @@ body {
   margin-bottom: 20px;
 }
 
+/* cards */
 .card {
   background: linear-gradient(145deg,#0b1a2a,#0f172a);
   border-radius: 14px;
-  padding: 22px;
+  padding: 20px;
   border: 1px solid rgba(0,180,216,0.2);
   margin-bottom: 15px;
   transition: 0.3s;
@@ -48,6 +49,7 @@ body {
   box-shadow: 0 0 20px rgba(0,180,216,0.2);
 }
 
+/* buttons */
 .btn {
   padding: 10px 18px;
   border-radius: 6px;
@@ -105,7 +107,7 @@ body {
 <div class="section">
 <div class="heading">Summary</div>
 <div class="card">
-Experienced software engineer with strong expertise in AI, DevSecOps, banking & healthcare applications.
+Experienced full stack developer specializing in AI integrations, banking systems, and secure enterprise applications.
 </div>
 </div>
 
@@ -115,11 +117,11 @@ Experienced software engineer with strong expertise in AI, DevSecOps, banking & 
 
 <div class="grid md:grid-cols-3 gap-4">
 <div class="card">AI / Chatbots / NLP</div>
-<div class="card">Angular / Vue</div>
+<div class="card">Vue / Angular</div>
 <div class="card">Java / Node.js</div>
 <div class="card">DevSecOps / Vault / Snyk</div>
 <div class="card">OpenShift / Cloud</div>
-<div class="card">CI/CD / GitHub Actions</div>
+<div class="card">CI/CD Pipelines</div>
 </div>
 
 </div>
@@ -129,35 +131,35 @@ Experienced software engineer with strong expertise in AI, DevSecOps, banking & 
 <div class="heading">Experience</div>
 
 <div class="card">
-<h3>2024 – Present | SLASE Banking</h3>
+<b>2024 – Present | SLASE Banking</b>
 <ul>
 <li>Vue + Java full stack</li>
-<li>AI Copilot usage</li>
-<li>Security integrations</li>
+<li>AI Copilot integration</li>
+<li>Security enhancements</li>
 </ul>
 </div>
 
 <div class="card">
-<h3>Wholesale Credit Risk</h3>
+<b>Wholesale Credit Risk</b>
 <ul>
-<li>CI/CD migration</li>
-<li>Security scanning</li>
+<li>CI/CD pipeline migration</li>
+<li>Security scanning automation</li>
 </ul>
 </div>
 
 <div class="card">
-<h3>2020 – 2023 | RBC</h3>
+<b>2020 – 2023 | RBC</b>
 <ul>
-<li>Angular upgrade</li>
+<li>Angular upgrades</li>
 <li>Vault integration</li>
 </ul>
 </div>
 
 <div class="card">
-<h3>2017 – 2020 | Healthcare</h3>
+<b>2017 – 2020 | Healthcare</b>
 <ul>
-<li>Angular + Spring Boot</li>
-<li>Secure pipelines</li>
+<li>Angular + Spring Boot apps</li>
+<li>Secure architecture</li>
 </ul>
 </div>
 
@@ -199,97 +201,53 @@ Experienced software engineer with strong expertise in AI, DevSecOps, banking & 
 </div>
 
 <!-- CHATBOT -->
-<div id="chatbot" class="fixed bottom-6 right-6 z-50 cursor-pointer">
+<div id="chatbot" style="position:fixed; bottom:20px; right:20px; z-index:1000;">
 
 <img src="./chutki.jpg"
 id="chatbotIcon"
-class="w-20 h-20 rounded-full object-contain bg-black border-2 border-[#00b4d8] shadow-lg">
+class="w-20 h-20 rounded-full object-cover object-top border-2 border-[#00b4d8] shadow-lg cursor-pointer">
 
 </div>
 
 <!-- CHATBOX -->
-<div id="chatbox"
-class="hidden fixed bottom-28 right-6 w-80 bg-[#0f172a] p-4 rounded-xl border border-[#00b4d8]">
+<div id="chatbox" class="hidden"
+style="position:fixed; bottom:100px; right:20px; width:300px; background:#0f172a; padding:15px; border-radius:12px; border:1px solid #00b4d8;">
 
-<div class="flex items-center gap-3 mb-3">
-
-<img src="./chutki.jpg"
-class="w-10 h-10 rounded-full object-contain bg-black">
-
+<div style="display:flex; gap:10px; margin-bottom:10px;">
+<img src="./chutki.jpg" class="w-10 h-10 rounded-full object-cover object-top">
 <div>
-<p class="text-[#00b4d8] font-bold">Chutki</p>
-<p class="text-xs text-gray-400">Ask me anything 😊</p>
+<div style="color:#00b4d8;font-weight:bold;">Chutki</div>
+<div style="font-size:12px;color:gray;">Ask me anything 😊</div>
+</div>
 </div>
 
-</div>
+<div id="chatlog" style="height:120px; overflow:auto;"></div>
 
-<div id="chatlog" class="h-40 overflow-y-auto text-sm mb-2"></div>
-
-<div class="flex gap-2">
+<div style="display:flex; gap:5px; margin-top:8px;">
 <input id="userInput"
-class="flex-1 p-2 rounded bg-slate-800 text-white"
-placeholder="Ask Chutki...">
+style="flex:1; padding:6px; border-radius:6px; background:#1e293b; color:white;"
+placeholder="Ask...">
 
-<button onclick="startVoice()" class="bg-[#0077b6] px-3 rounded">🎤</button>
-<button onclick="sendMessage()" class="bg-[#00b4d8] px-3 rounded text-black">➤</button>
+<button onclick="startVoice()">🎤</button>
+<button onclick="sendMessage()">➤</button>
 </div>
 
 </div>
 
 <script>
 
+const chatbot = document.getElementById("chatbot");
+const chatbox = document.getElementById("chatbox");
+
+let moved = false;
+
 /* toggle */
-document.getElementById("chatbot").onclick = () => {
-  document.getElementById("chatbox").classList.toggle("hidden");
-};
-
-/* send */
-async function sendMessage(){
-let inputBox=document.getElementById("userInput");
-let input=inputBox.value.trim();
-if(!input) return;
-
-let log=document.getElementById("chatlog");
-
-log.innerHTML+=`<div>👤 ${input}</div>`;
-log.innerHTML+=`<div style="color:#94a3b8">Chutki thinking...</div>`;
-
-try{
-let res=await fetch("/api/chat",{
-method:"POST",
-headers:{"Content-Type":"application/json"},
-body:JSON.stringify({message:input})
+chatbot.addEventListener("click", () => {
+  if (!moved) chatbox.classList.toggle("hidden");
+  moved = false;
 });
-
-let data=await res.json();
-
-log.lastChild.remove();
-log.innerHTML+=`<div style="color:#00b4d8">🤖 ${data.reply}</div>`;
-}catch{
-log.lastChild.remove();
-log.innerHTML+=`<div style="color:red">Error</div>`;
-}
-
-inputBox.value="";
-}
-
-/* enter */
-document.getElementById("userInput").addEventListener("keydown",(e)=>{
-if(e.key==="Enter") sendMessage();
-});
-
-/* voice */
-function startVoice(){
-const rec=new (window.SpeechRecognition||window.webkitSpeechRecognition)();
-rec.lang="en-IN";
-rec.onresult=(e)=>{
-document.getElementById("userInput").value=e.results[0][0].transcript;
-};
-rec.start();
-}
 
 /* drag */
-const chatbot=document.getElementById("chatbot");
 let isDragging=false,offsetX,offsetY;
 
 chatbot.addEventListener("mousedown",(e)=>{
@@ -300,14 +258,35 @@ offsetY=e.clientY-chatbot.offsetTop;
 
 document.addEventListener("mousemove",(e)=>{
 if(isDragging){
+moved=true;
 chatbot.style.left=(e.clientX-offsetX)+"px";
 chatbot.style.top=(e.clientY-offsetY)+"px";
 chatbot.style.right="auto";
 chatbot.style.bottom="auto";
+
+chatbox.style.left=chatbot.style.left;
+chatbox.style.top=(chatbot.offsetTop-320)+"px";
 }
 });
 
 document.addEventListener("mouseup",()=>isDragging=false);
+
+/* chat */
+function sendMessage(){
+let input=document.getElementById("userInput").value;
+let log=document.getElementById("chatlog");
+log.innerHTML+="<div>👤 "+input+"</div>";
+document.getElementById("userInput").value="";
+}
+
+/* voice */
+function startVoice(){
+const rec=new (window.SpeechRecognition||window.webkitSpeechRecognition)();
+rec.onresult=(e)=>{
+document.getElementById("userInput").value=e.results[0][0].transcript;
+};
+rec.start();
+}
 
 </script>
 
