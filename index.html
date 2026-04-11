@@ -34,14 +34,13 @@ body {
   margin-bottom: 20px;
 }
 
-/* cards */
 .card {
   background: linear-gradient(145deg,#0b1a2a,#0f172a);
   border-radius: 14px;
   padding: 22px;
   border: 1px solid rgba(0,180,216,0.2);
-  transition: 0.3s;
   margin-bottom: 15px;
+  transition: 0.3s;
 }
 
 .card:hover {
@@ -49,7 +48,6 @@ body {
   box-shadow: 0 0 20px rgba(0,180,216,0.2);
 }
 
-/* buttons */
 .btn {
   padding: 10px 18px;
   border-radius: 6px;
@@ -73,7 +71,7 @@ body {
   color: black;
 }
 
-/* chatbot animation */
+/* floating animation */
 @keyframes floaty {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
@@ -107,7 +105,7 @@ body {
 <div class="section">
 <div class="heading">Summary</div>
 <div class="card">
-Experienced software engineer with strong background in AI, DevSecOps, banking & healthcare systems.
+Experienced software engineer with strong expertise in AI, DevSecOps, banking & healthcare applications.
 </div>
 </div>
 
@@ -119,7 +117,7 @@ Experienced software engineer with strong background in AI, DevSecOps, banking &
 <div class="card">AI / Chatbots / NLP</div>
 <div class="card">Angular / Vue</div>
 <div class="card">Java / Node.js</div>
-<div class="card">DevSecOps / Snyk / Vault</div>
+<div class="card">DevSecOps / Vault / Snyk</div>
 <div class="card">OpenShift / Cloud</div>
 <div class="card">CI/CD / GitHub Actions</div>
 </div>
@@ -134,7 +132,7 @@ Experienced software engineer with strong background in AI, DevSecOps, banking &
 <h3>2024 – Present | SLASE Banking</h3>
 <ul>
 <li>Vue + Java full stack</li>
-<li>Copilot AI usage</li>
+<li>AI Copilot usage</li>
 <li>Security integrations</li>
 </ul>
 </div>
@@ -168,30 +166,24 @@ Experienced software engineer with strong background in AI, DevSecOps, banking &
 <!-- EDUCATION -->
 <div class="section">
 <div class="heading">Education</div>
-
 <div class="card">M.E – Sri Krishna College</div>
 <div class="card">B.E – KLN College</div>
 <div class="card">HSC – Mahatma Montessori</div>
-
 </div>
 
 <!-- CERTIFICATIONS -->
 <div class="section">
 <div class="heading">Certifications</div>
-
 <div class="card">React – Udemy</div>
 <div class="card">Angular – Besant</div>
-
 </div>
 
 <!-- ACHIEVEMENTS -->
 <div class="section">
 <div class="heading">Achievements</div>
-
 <div class="card">Angular Migration (14 → 18)</div>
 <div class="card">OCP Migration</div>
 <div class="card">Associate of the Month</div>
-
 </div>
 
 <!-- CONTACT -->
@@ -211,8 +203,7 @@ Experienced software engineer with strong background in AI, DevSecOps, banking &
 
 <img src="./chutki.jpg"
 id="chatbotIcon"
-onerror="this.src='https://via.placeholder.com/80?text=C'"
-class="w-20 h-20 rounded-full object-cover border-2 border-[#00b4d8] shadow-lg">
+class="w-20 h-20 rounded-full object-contain bg-black border-2 border-[#00b4d8] shadow-lg">
 
 </div>
 
@@ -223,22 +214,26 @@ class="hidden fixed bottom-28 right-6 w-80 bg-[#0f172a] p-4 rounded-xl border bo
 <div class="flex items-center gap-3 mb-3">
 
 <img src="./chutki.jpg"
-onerror="this.src='https://via.placeholder.com/40?text=C'"
-class="w-10 h-10 rounded-full object-cover">
+class="w-10 h-10 rounded-full object-contain bg-black">
 
 <div>
 <p class="text-[#00b4d8] font-bold">Chutki</p>
-<p class="text-xs text-gray-400">Hi 😊</p>
+<p class="text-xs text-gray-400">Ask me anything 😊</p>
 </div>
 
 </div>
 
 <div id="chatlog" class="h-40 overflow-y-auto text-sm mb-2"></div>
 
+<div class="flex gap-2">
 <input id="userInput"
-class="w-full p-2 rounded bg-slate-800 text-white"
-placeholder="Ask something..."
-onkeydown="handleKey(event)">
+class="flex-1 p-2 rounded bg-slate-800 text-white"
+placeholder="Ask Chutki...">
+
+<button onclick="startVoice()" class="bg-[#0077b6] px-3 rounded">🎤</button>
+<button onclick="sendMessage()" class="bg-[#00b4d8] px-3 rounded text-black">➤</button>
+</div>
+
 </div>
 
 <script>
@@ -248,8 +243,53 @@ document.getElementById("chatbot").onclick = () => {
   document.getElementById("chatbox").classList.toggle("hidden");
 };
 
+/* send */
+async function sendMessage(){
+let inputBox=document.getElementById("userInput");
+let input=inputBox.value.trim();
+if(!input) return;
+
+let log=document.getElementById("chatlog");
+
+log.innerHTML+=`<div>👤 ${input}</div>`;
+log.innerHTML+=`<div style="color:#94a3b8">Chutki thinking...</div>`;
+
+try{
+let res=await fetch("/api/chat",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({message:input})
+});
+
+let data=await res.json();
+
+log.lastChild.remove();
+log.innerHTML+=`<div style="color:#00b4d8">🤖 ${data.reply}</div>`;
+}catch{
+log.lastChild.remove();
+log.innerHTML+=`<div style="color:red">Error</div>`;
+}
+
+inputBox.value="";
+}
+
+/* enter */
+document.getElementById("userInput").addEventListener("keydown",(e)=>{
+if(e.key==="Enter") sendMessage();
+});
+
+/* voice */
+function startVoice(){
+const rec=new (window.SpeechRecognition||window.webkitSpeechRecognition)();
+rec.lang="en-IN";
+rec.onresult=(e)=>{
+document.getElementById("userInput").value=e.results[0][0].transcript;
+};
+rec.start();
+}
+
 /* drag */
-const chatbot = document.getElementById("chatbot");
+const chatbot=document.getElementById("chatbot");
 let isDragging=false,offsetX,offsetY;
 
 chatbot.addEventListener("mousedown",(e)=>{
@@ -268,22 +308,6 @@ chatbot.style.bottom="auto";
 });
 
 document.addEventListener("mouseup",()=>isDragging=false);
-
-/* mobile */
-chatbot.addEventListener("touchstart",(e)=>{
-isDragging=true;
-offsetX=e.touches[0].clientX-chatbot.offsetLeft;
-offsetY=e.touches[0].clientY-chatbot.offsetTop;
-});
-
-document.addEventListener("touchmove",(e)=>{
-if(isDragging){
-chatbot.style.left=(e.touches[0].clientX-offsetX)+"px";
-chatbot.style.top=(e.touches[0].clientY-offsetY)+"px";
-}
-});
-
-document.addEventListener("touchend",()=>isDragging=false);
 
 </script>
 
