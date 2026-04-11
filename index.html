@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sanjay Prasanna | AI Engineer</title>
+<title>Sanjay Prasanna</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -19,62 +19,33 @@ body {
   font-family: Arial;
 }
 
-.container {
-  max-width: 1400px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-.section { margin-bottom: 70px; }
-
-.heading {
-  font-size: 28px;
-  font-weight: bold;
-  color: #00b4d8;
-  margin-bottom: 20px;
-}
-
-/* cards */
-.card {
-  background: linear-gradient(145deg,#0b1a2a,#0f172a);
-  border-radius: 16px;
-  padding: 24px;
-  border: 1px solid rgba(0,180,216,0.2);
-  transition: 0.3s;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(0,180,216,0.2);
-}
-
-/* buttons */
-.btn {
-  padding: 12px 20px;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-.btn-primary {
-  background: #0077b6;
-}
-.btn-primary:hover {
-  background: #00b4d8;
-}
-.btn-outline {
-  border: 1px solid #00b4d8;
-}
-.btn-outline:hover {
-  background: #00b4d8;
-  color: black;
-}
-
-/* animation */
+/* floating animation */
 @keyframes floaty {
   0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-8px); }
 }
 
 #chatbotIcon {
   animation: floaty 3s ease-in-out infinite;
+  transition: transform 0.2s;
+}
+
+#chatbotIcon:hover {
+  transform: scale(1.1);
+}
+
+.card {
+  background: #0f172a;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,180,216,0.2);
+  margin-bottom: 15px;
+}
+
+.heading {
+  color: #00b4d8;
+  font-size: 26px;
+  margin-bottom: 15px;
 }
 
 </style>
@@ -82,90 +53,31 @@ body {
 
 <body>
 
-<div class="container">
+<div class="max-w-5xl mx-auto p-6">
 
-<!-- HERO -->
-<div class="text-center section">
-<img src="profile.jpg" class="mx-auto w-48 h-48 rounded-full border-4 border-[#00b4d8] mb-5">
+<h1 class="text-3xl font-bold text-center">Sanjay Prasanna</h1>
 
-<h1 class="text-4xl font-bold">Sanjay Prasanna</h1>
-<p class="text-gray-400 mt-2">Senior AI & Full-Stack Engineer • 10+ Years</p>
+<div class="heading mt-8">Experience</div>
 
-<div class="mt-5">
-<a href="/resume_v2.pdf" target="_blank" class="btn btn-primary mr-2">📄 Resume</a>
-<a href="#contact" class="btn btn-outline">Contact</a>
-</div>
-</div>
+<div class="card">SLASE – Vue + Java, AI Integration</div>
+<div class="card">RBC – Angular Migration</div>
+<div class="card">Healthcare – Secure Apps</div>
 
-<!-- SUMMARY -->
-<div class="section">
-<div class="heading">Summary</div>
-<div class="card">
-10+ years experience in banking & healthcare systems with focus on AI, DevSecOps and enterprise applications.
-</div>
-</div>
+<div class="heading mt-8">Contact</div>
 
-<!-- SKILLS -->
-<div class="section">
-<div class="heading">Skills</div>
-<div class="grid md:grid-cols-3 gap-5">
-<div class="card">AI: Chatbots, NLP</div>
-<div class="card">Frontend: Angular, Vue</div>
-<div class="card">Backend: Java, Node.js</div>
-<div class="card">DevSecOps: Snyk, Vault</div>
-<div class="card">Cloud: OpenShift</div>
-<div class="card">CI/CD: GitHub Actions</div>
-</div>
-</div>
-
-<!-- EXPERIENCE -->
-<div class="section">
-<div class="heading">Experience</div>
-
-<div class="card mb-4">
-<h3>2024 – Present | SLASE</h3>
-<ul>
-<li>Vue + Java development</li>
-<li>Copilot integration</li>
-<li>Security scanning</li>
-</ul>
-</div>
-
-<div class="card mb-4">
-<h3>Wholesale Credit Risk</h3>
-<ul>
-<li>CI/CD migration</li>
-<li>Security tools integration</li>
-</ul>
-</div>
-
-<div class="card mb-4">
-<h3>2020 – 2023 | RBC</h3>
-<ul>
-<li>Angular migration</li>
-<li>Vault integration</li>
-</ul>
-</div>
-
-</div>
-
-<!-- CONTACT -->
-<div id="contact" class="section text-center">
-<div class="heading">Contact</div>
-
-<a href="mailto:sanjucena09@gmail.com" class="btn btn-primary block mb-2">📧 Email</a>
-<a href="tel:+919715788484" class="btn btn-outline block mb-2">📱 Call</a>
-<a href="https://www.linkedin.com/in/sanjay-prasanna-a831b273" target="_blank" class="btn btn-outline block">💼 LinkedIn</a>
-
-</div>
+<div class="card">📧 sanjucena09@gmail.com</div>
+<div class="card">📱 9715788484</div>
 
 </div>
 
 <!-- CHATBOT -->
-<div id="chatbot" class="fixed bottom-6 right-6 z-50 cursor-pointer">
-<img src="chutki.jpg"
+<div id="chatbot" class="fixed bottom-6 right-6 cursor-pointer z-50">
+
+<img src="https://raw.githubusercontent.com/sanjucena/sanju-resume/main/chutki.jpg"
      id="chatbotIcon"
+     onerror="this.src='https://via.placeholder.com/80?text=C'"
      class="w-20 h-20 rounded-full object-cover border-2 border-[#00b4d8] shadow-lg">
+
 </div>
 
 <!-- CHATBOX -->
@@ -173,62 +85,36 @@ body {
 class="hidden fixed bottom-28 right-6 w-80 bg-[#0f172a] p-4 rounded-xl border border-[#00b4d8]">
 
 <div class="flex items-center gap-3 mb-3">
-<img src="chutki.jpg" class="w-10 h-10 rounded-full object-cover">
+
+<img src="https://raw.githubusercontent.com/sanjucena/sanju-resume/main/chutki.jpg"
+     class="w-10 h-10 rounded-full object-cover">
+
 <div>
 <p class="text-[#00b4d8] font-bold">Chutki</p>
-<p class="text-xs text-gray-400">Ask me anything 😊</p>
-</div>
+<p class="text-xs text-gray-400">Hi 😊</p>
 </div>
 
-<div id="chatlog" class="h-48 overflow-y-auto text-sm mb-2"></div>
+</div>
 
-<input id="userInput" type="text"
-placeholder="Ask Chutki..."
+<div id="chatlog" class="h-40 overflow-y-auto text-sm mb-2"></div>
+
+<input id="userInput"
 class="w-full p-2 rounded bg-slate-800 text-white"
+placeholder="Ask something..."
 onkeydown="handleKey(event)">
+
 </div>
 
 <script>
 
-/* toggle chat */
-function toggleChat(){
-document.getElementById("chatbox").classList.toggle("hidden");
-}
+/* toggle */
+document.getElementById("chatbot").onclick = () => {
+  document.getElementById("chatbox").classList.toggle("hidden");
+};
 
-document.getElementById("chatbot").addEventListener("click", toggleChat);
-
-/* chat */
-async function handleKey(e){
-if(e.key==="Enter"){
-let input=e.target.value;
-let log=document.getElementById("chatlog");
-
-log.innerHTML+=`<div>👤 ${input}</div>`;
-log.innerHTML+=`<div style="color:#94a3b8">Chutki thinking...</div>`;
-
-try {
-let res=await fetch("/api/chat",{
-method:"POST",
-headers:{"Content-Type":"application/json"},
-body:JSON.stringify({message:input})
-});
-
-let data=await res.json();
-
-log.lastChild.remove();
-log.innerHTML+=`<div style="color:#00b4d8">🤖 ${data.reply}</div>`;
-} catch {
-log.lastChild.remove();
-log.innerHTML+=`<div style="color:red">Error</div>`;
-}
-
-e.target.value="";
-log.scrollTop=log.scrollHeight;
-}
-}
-
-/* draggable */
+/* drag */
 const chatbot = document.getElementById("chatbot");
+
 let isDragging=false,offsetX,offsetY;
 
 chatbot.addEventListener("mousedown",(e)=>{
