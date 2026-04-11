@@ -19,7 +19,6 @@ body {
   font-family: Arial;
 }
 
-/* layout */
 .container {
   max-width: 1400px;
   margin: auto;
@@ -71,10 +70,14 @@ body {
   color: black;
 }
 
-.contact-btn {
-  display: block;
-  margin: 8px auto;
-  width: fit-content;
+/* floating animation */
+@keyframes floaty {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.chutki-float {
+  animation: floaty 3s ease-in-out infinite;
 }
 
 </style>
@@ -101,7 +104,7 @@ body {
 <div class="section">
 <div class="heading">Summary</div>
 <div class="card">
-10+ years of experience in banking & healthcare. Specialized in AI, DevSecOps, and enterprise-scale applications.
+10+ years of experience in banking & healthcare. Specialized in AI, DevSecOps, and enterprise systems.
 </div>
 </div>
 
@@ -120,114 +123,66 @@ body {
 </div>
 </div>
 
-<!-- EXPERIENCE (TIMELINE STYLE BUT CLEAN) -->
+<!-- EXPERIENCE -->
 <div class="section">
 <div class="heading">Experience</div>
 
 <div class="card mb-4">
 <h3>2024 – Present | SLASE Banking</h3>
 <ul>
-<li>• Vue + Java full-stack</li>
-<li>• Copilot-assisted development</li>
-<li>• Security scanning integration</li>
-<li>• CI/CD automation</li>
+<li>Vue + Java development</li>
+<li>Copilot-assisted coding</li>
+<li>Security integrations</li>
 </ul>
 </div>
 
 <div class="card mb-4">
 <h3>Wholesale Credit Risk</h3>
 <ul>
-<li>• CI/CD migration</li>
-<li>• Security tools integration</li>
-<li>• OpenShift deployment</li>
+<li>CI/CD migration</li>
+<li>Security tools integration</li>
 </ul>
 </div>
 
 <div class="card mb-4">
-<h3>2020 – 2023 | RBC Platform</h3>
+<h3>2020 – 2023 | RBC</h3>
 <ul>
-<li>• Angular 14 → 18 migration</li>
-<li>• OCP migration</li>
-<li>• Vault integration</li>
-</ul>
-</div>
-
-<div class="card mb-4">
-<h3>2017 – 2020 | Healthcare</h3>
-<ul>
-<li>• Angular + Spring Boot</li>
-<li>• Secure pipelines</li>
-</ul>
-</div>
-
-<div class="card">
-<h3>2016 – 2017 | Early Career</h3>
-<ul>
-<li>• HTML, CSS, Bootstrap</li>
-<li>• OpenText Exstream</li>
+<li>Angular migration</li>
+<li>Vault integration</li>
 </ul>
 </div>
 
 </div>
 
-<!-- EDUCATION -->
-<div class="section">
-<div class="heading">Education</div>
-
-<div class="card">M.E – Sri Krishna College</div>
-<div class="card">B.E – KLN College</div>
-<div class="card">HSC – Mahatma Montessori</div>
-
-</div>
-
-<!-- CERTIFICATIONS -->
-<div class="section">
-<div class="heading">Certifications</div>
-
-<div class="card">React – Udemy</div>
-<div class="card">Angular – Besant</div>
-
-</div>
-
-<!-- ACHIEVEMENTS -->
-<div class="section">
-<div class="heading">Achievements</div>
-
-<div class="card">Angular Migration (14→18)</div>
-<div class="card">OCP Migration</div>
-<div class="card">Associate of the Month</div>
-
-</div>
-
-<!-- CONTACT BUTTONS -->
+<!-- CONTACT -->
 <div id="contact" class="section text-center">
 <div class="heading">Contact</div>
 
-<a href="mailto:sanjucena09@gmail.com" class="btn btn-primary contact-btn">📧 Email</a>
-<a href="tel:+919715788484" class="btn btn-outline contact-btn">📱 Call</a>
-<a href="https://www.linkedin.com/in/sanjay-prasanna-a831b273" target="_blank" class="btn btn-outline contact-btn">💼 LinkedIn</a>
+<a href="mailto:sanjucena09@gmail.com" class="btn btn-primary block mb-2">📧 Email</a>
+<a href="tel:+919715788484" class="btn btn-outline block mb-2">📱 Call</a>
+<a href="https://www.linkedin.com/in/sanjay-prasanna-a831b273" target="_blank" class="btn btn-outline block">💼 LinkedIn</a>
 
 </div>
 
 </div>
 
-<!-- CHATBOT -->
-<div class="fixed bottom-6 right-6">
+<!-- CHATBOT WITH YOUR DAUGHTER -->
+<img src="/chutki.jpg"
+onclick="toggleChat()"
+class="fixed bottom-6 right-6 w-20 h-20 rounded-full object-cover cursor-pointer chutki-float shadow-lg"
+style="z-index:1000; border:3px solid #00b4d8;">
 
-<button onclick="toggleChat()" class="bg-[#0077b6] p-4 rounded-full">💬</button>
-
-<div id="chatbox" class="hidden mt-2 w-80 bg-[#0f172a] p-4 rounded-xl border border-[#00b4d8]">
+<!-- CHATBOX -->
+<div id="chatbox"
+class="hidden fixed bottom-28 right-6 w-80 bg-[#0f172a] p-4 rounded-xl border border-[#00b4d8]">
 
 <div class="flex items-center gap-3 mb-3">
 
-<!-- Avatar -->
-<div class="w-10 h-10 rounded-full bg-[#00b4d8] flex items-center justify-center text-black font-bold animate-pulse">
-C
-</div>
+<img src="/chutki.jpg" class="w-10 h-10 rounded-full object-cover">
 
 <div>
 <p class="text-[#00b4d8] font-bold">Chutki</p>
-<p class="text-xs text-gray-400">AI Assistant</p>
+<p class="text-xs text-gray-400">Ask me anything 😊</p>
 </div>
 
 </div>
@@ -238,7 +193,6 @@ C
 class="w-full p-2 rounded bg-slate-800 text-white"
 onkeydown="handleKey(event)">
 
-</div>
 </div>
 
 <script>
@@ -267,7 +221,7 @@ log.lastChild.remove();
 log.innerHTML+=`<div style="color:#00b4d8">🤖 ${data.reply}</div>`;
 } catch {
 log.lastChild.remove();
-log.innerHTML+=`<div style="color:red">⚠️ Error</div>`;
+log.innerHTML+=`<div style="color:red">Error</div>`;
 }
 
 e.target.value="";
